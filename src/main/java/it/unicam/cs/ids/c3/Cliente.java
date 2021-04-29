@@ -7,10 +7,33 @@ package it.unicam.cs.ids.c3;
  */
 public interface Cliente {
 
+    /**
+     * @return il nome del cliente.
+     */
     String getNome();
-    String setNome();
+
+    /**
+     * @param nome il nuovo nome del cliente.
+     */
+    void setNome(String nome);
+
+    /**
+     * @return il cognome del cliente.
+     */
     String getCognome();
-    String setCognome();
+
+    /**
+     * @param cognome il nuovo cognome del cliente.
+     */
+    void setCognome(String cognome);
+
+    /**
+     * @return l'indirizzo del cliente.
+     */
     String getIndirizzo();
-    String setIndirizzo();
+
+    /**
+     * @param indirizzo il nuovo indirizzo.
+     */
+    void setIndirizzo(String indirizzo);
 }

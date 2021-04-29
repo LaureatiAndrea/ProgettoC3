@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="721a5c69-c571-4d38-9ecd-9a0efcb3329e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/negozio/Categoria_Merceologica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/negozio/Negozio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/negozio/Promozione.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/negozio/SimpleNegozio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/ordine/Ordine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/ordine/SimpleOrdine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/ordine/Stato_Ordine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.C3 Visual Paradigm.vpp.lck" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/C3 Visual Paradigm.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/C3 Visual Paradigm.vpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/Carrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/Carrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/Carrier.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/it/unicam/cs/ids/c3/Cliente.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,13 +73,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
