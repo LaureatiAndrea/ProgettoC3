@@ -13,5 +13,4 @@ public interface Cliente {
     String setCognome();
     String getIndirizzo();
     String setIndirizzo();
-
 }

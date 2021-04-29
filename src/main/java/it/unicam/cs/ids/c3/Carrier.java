@@ -5,8 +5,6 @@ package it.unicam.cs.ids.c3;
  */
 public interface Carrier {
 
-    //int getId();
-
     /**
      * Restituisce il nome del corriere.
      *
@@ -21,6 +19,6 @@ public interface Carrier {
      */
     String getCognome();
 
-    enum status;
+    ;
 
 }
