@@ -1,7 +1,7 @@
 package it.unicam.cs.ids.c3;
 
 /**
- * Rappresenta l'impiegato di un negozio.
+ * Rappresenta un generico impiegato di un negozio.
  */
 public interface Impiegato {
 

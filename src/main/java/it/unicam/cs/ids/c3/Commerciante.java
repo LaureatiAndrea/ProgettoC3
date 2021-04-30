@@ -1,7 +1,7 @@
 package it.unicam.cs.ids.c3;
 
 /**
- * Rappresenta il proprietario di uno o piu' negozi.
+ * Rappresenta un generico proprietario di uno o piu' negozi.
  */
 public interface Commerciante {
 

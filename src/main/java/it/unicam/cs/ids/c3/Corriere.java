@@ -1,7 +1,7 @@
 package it.unicam.cs.ids.c3;
 
 /**
- * Rappresenta un corriere addetto al trasporto delle merci.
+ * Rappresenta un generico corriere addetto al trasporto delle merci.
  */
 public interface Corriere {
 
