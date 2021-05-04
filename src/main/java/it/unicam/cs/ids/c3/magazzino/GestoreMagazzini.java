@@ -17,8 +17,8 @@ public class GestoreMagazzini {
     public GestoreMagazzini(){
         this.magazzini = new ArrayList<>();
         //Cancellare
-        this.magazzini.add(new Magazzino(1, "Centro commerciale X", "Via cardo 22"));
-        this.magazzini.add(new Magazzino(2, "Magazzino Centrale", "Via P.Fossa 144"));
+        this.magazzini.add(new SimpleMagazzino(1, "Centro commerciale X", "Via cardo 22"));
+        this.magazzini.add(new SimpleMagazzino(2, "Magazzino Centrale", "Via P.Fossa 144"));
     }
 
     public void addMagazzino(Magazzino m){

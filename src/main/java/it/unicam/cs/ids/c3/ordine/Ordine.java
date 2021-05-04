@@ -17,12 +17,12 @@ public interface Ordine {
      */
     void setId(int id);
     /**
-     * @return l'ID del cliente
+     * @return l'ID del it.unicam.cs.ids.c3.cliente
      */
     int getIdCliente();
 
     /**
-     * @param idCliente il nuovo ID del cliente
+     * @param idCliente il nuovo ID del it.unicam.cs.ids.c3.cliente
      */
     void setIdCliente(int idCliente);
 
@@ -37,7 +37,7 @@ public interface Ordine {
     void setDestinazione(String destinazione);
 
     /**
-     * @return il codice usato dal cliente per ritirare la merce
+     * @return il codice usato dal it.unicam.cs.ids.c3.cliente per ritirare la merce
      */
     int getCodiceRitiro();
 

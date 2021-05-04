@@ -1,9 +1,14 @@
-package it.unicam.cs.ids.c3;
+package it.unicam.cs.ids.c3.magazzino;
 
 /**
  * Rappresenta un generico magazzino dove viene depositata la merce.
  */
 public interface Magazzino {
+
+    /**
+     * @return l'ID del magazzino.
+     */
+    int getId();
 
     /**
      * @return il nome del magazzino.
@@ -24,5 +29,6 @@ public interface Magazzino {
      * @param indirizzo il nuovo indirizzo del magazzino.
      */
     void setIndirizzo(String indirizzo);
+
 
 }

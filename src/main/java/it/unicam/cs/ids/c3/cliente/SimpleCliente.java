@@ -1,18 +1,25 @@
-package it.unicam.cs.ids.c3;
+package it.unicam.cs.ids.c3.cliente;
 
 /**
  * Classe di default che implementa l'interfaccia Cliente.
  */
 public class SimpleCliente implements Cliente {
 
+    private int id;
     private String nome;
     private String cognome;
     private String indirizzo;
 
-    public SimpleCliente(String nome, String cognome, String indirizzo) {
+
+    public SimpleCliente(int id, String nome, String cognome, String indirizzo) {
         this.nome = nome;
         this.cognome = cognome;
         this.indirizzo = indirizzo;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     @Override

@@ -17,8 +17,8 @@ public class GestoreClienti {
     public GestoreClienti(){
         clienti = new ArrayList<>();
         //Eliminare
-        clienti.add(new Cliente(1, "Andrea", "Laureati"));
-        clienti.add(new Cliente(2, "Marco", "Gaetani"));
+        clienti.add(new SimpleCliente(1, "Andrea", "Laureati", "via fontepezzana"));
+        clienti.add(new SimpleCliente(2, "Marco", "Gaetani", "via colleappeso"));
     }
 
     public void addCliente(Cliente c){

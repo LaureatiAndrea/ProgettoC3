@@ -1,16 +1,23 @@
-package it.unicam.cs.ids.c3;
+package it.unicam.cs.ids.c3.impiegato;
 
 /**
  * Classe di default che implementa l'interfaccia Impiegato.
  */
 public class SimpleImpiegato implements Impiegato {
 
+    private int id;
     private String nome;
     private String cognome;
 
-    public SimpleImpiegato(String nome, String cognome) {
+    public SimpleImpiegato(int id, String nome, String cognome) {
+        this.id = id;
         this.nome = nome;
         this.cognome = cognome;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 
     @Override

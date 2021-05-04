@@ -1,11 +1,16 @@
-package it.unicam.cs.ids.c3;
+package it.unicam.cs.ids.c3.cliente;
 
 /**
- * Le classi che implementano questa interfaccia hanno la responsabilità di descrivere un cliente del sistema C3.
+ * Le classi che implementano questa interfaccia hanno la responsabilità di descrivere un it.unicam.cs.ids.c3.cliente del sistema C3.
  *
  * @author Laureati Andrea Francesco, Gaetani Marco.
  */
 public interface Cliente {
+
+    /**
+     * @return l'ID del cliente.
+     */
+    int getId();
 
     /**
      * @return il nome del cliente.
@@ -36,4 +41,5 @@ public interface Cliente {
      * @param indirizzo il nuovo indirizzo.
      */
     void setIndirizzo(String indirizzo);
+
 }

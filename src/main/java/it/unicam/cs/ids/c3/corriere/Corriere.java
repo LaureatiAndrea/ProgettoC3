@@ -1,9 +1,14 @@
-package it.unicam.cs.ids.c3;
+package it.unicam.cs.ids.c3.corriere;
 
 /**
  * Rappresenta un generico corriere addetto al trasporto delle merci.
  */
 public interface Corriere {
+
+    /**
+     * @return l'ID del corriere.
+     */
+    int getId();
 
     /**
      * @return il nome del corriere.
@@ -34,5 +39,6 @@ public interface Corriere {
      * @param statoCorriere il nuovo stato del corriere.
      */
     void setStato(Stato_Corriere statoCorriere);
+
 
 }
