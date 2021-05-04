@@ -10,6 +10,15 @@ import java.util.ArrayList;
 public interface Negozio {
 
     /**
+     * @return l'id del negozio
+     */
+    int getId();
+
+    /**
+     * @param id il nuovo id del negozio
+     */
+    void setId(int id);
+    /**
      * @return il nome del negozio
      */
     String getNome();

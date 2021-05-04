@@ -4,17 +4,30 @@ import java.util.ArrayList;
 
 public class SimpleNegozio implements Negozio{
 
+    private int id;
     private String nome;
     private String indirizzo;
     private Categoria_Merceologica categoria;
     private ArrayList<Promozione> promozioni;
 
-    public SimpleNegozio(String nome,String indirizzo,Categoria_Merceologica categoria){
+    public SimpleNegozio(int id,String nome,String indirizzo,Categoria_Merceologica categoria){
+        this.id = id;
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.categoria = categoria;
         promozioni = new ArrayList<>();
     }
+
+    @Override
+    public int getId() {
+        return this.id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String getNome() {
         return this.nome;

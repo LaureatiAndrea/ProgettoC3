@@ -8,6 +8,15 @@ package it.unicam.cs.ids.c3.ordine;
 public interface Ordine {
 
     /**
+     * @return l'id dell'ordine
+     */
+    int getID();
+
+    /**
+     * @param id il nuovo id dell'ordine
+     */
+    void setId(int id);
+    /**
      * @return l'ID del cliente
      */
     int getIdCliente();

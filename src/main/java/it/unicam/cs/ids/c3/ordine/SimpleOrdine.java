@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class SimpleOrdine implements Ordine {
 
+    private int idOrdine;
     private int idCliente;
     private String destinazione;
     private int codiceRitiro;
@@ -21,6 +22,16 @@ public class SimpleOrdine implements Ordine {
     private int generaCodice() {
         Random random = new Random();
         return random.nextInt(10000);
+    }
+
+    @Override
+    public int getID() {
+        return this.idOrdine;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.idOrdine = id;
     }
 
     @Override
