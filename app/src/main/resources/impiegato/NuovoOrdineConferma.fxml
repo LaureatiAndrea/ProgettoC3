@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="385.0" prefWidth="445.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.impiegato.NuovoOrdineConfermaController">
+   <children>
+      <Label layoutX="131.0" layoutY="14.0" text="RIEPILOGO NUOVO ORDINE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="showClienteLabel" layoutX="43.0" layoutY="75.0" text="showCliente">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="annullaButton" layoutX="36.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#annullaButtonClicked" prefHeight="33.0" prefWidth="90.0" text="Annulla" />
+      <Button fx:id="confermaButton" layoutX="320.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#confermaButtonClicked" prefHeight="33.0" prefWidth="90.0" text="Conferma" />
+      <Label fx:id="showDestinazioneLabel" layoutX="43.0" layoutY="138.0" text="showDestinazione">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="showCorriereLabel" layoutX="43.0" layoutY="197.0" text="showCorriere">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="55.0" text="Cliente">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="118.0" text="Destinazione">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="177.0" text="Corriere">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="noteTextField" layoutX="36.0" layoutY="272.0" prefHeight="25.0" prefWidth="374.0" />
+      <Label layoutX="36.0" layoutY="252.0" text="Note : ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

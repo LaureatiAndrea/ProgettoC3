@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="383.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.impiegato.NuovoOrdineSceltaCorriereController">
+   <children>
+      <Label layoutX="63.0" layoutY="14.0" text="SELEZIONA UN CORRIERE DISPONIBILE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="corriereComboBox" layoutX="42.0" layoutY="58.0" prefHeight="25.0" prefWidth="300.0" promptText="Seleziona..." />
+      <Button fx:id="annullaButton" layoutX="42.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#annullaButtonClicked" prefHeight="33.0" prefWidth="90.0" text="Annulla" />
+      <Button fx:id="confermaButton" layoutX="252.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#confermaButtonClicked" prefHeight="33.0" prefWidth="90.0" text="Conferma" />
+   </children>
+</Pane>

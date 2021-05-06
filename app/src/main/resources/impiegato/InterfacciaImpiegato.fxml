@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.impiegato.IImpiegato">
+   <children>
+      <Label layoutX="96.0" layoutY="32.0" text="MENU IMPIEGATO">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="creaNuovoOrdineButton" layoutY="114.0" mnemonicParsing="false" onAction="#creaNuovoOrdine" prefHeight="63.0" prefWidth="350.0" style="-fx-background-color: none;" text="Crea nuovo ordine">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

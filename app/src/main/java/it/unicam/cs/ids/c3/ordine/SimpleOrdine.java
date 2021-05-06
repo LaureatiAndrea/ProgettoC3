@@ -14,13 +14,17 @@ public class SimpleOrdine implements Ordine {
     private int idOrdine;
     private int idCliente;
     private String destinazione;
+    private String note;
+    private int idMagazzino;
     private int codiceRitiro;
     private int idCorriere;
     private Stato_Ordine statoOrdine;
 
-    public SimpleOrdine(int idCliente,int idCorriere,String destinazione){
+    public SimpleOrdine(int idCliente,int idCorriere,String destinazione, int idMagazzino,String note){
         this.idCliente = idCliente;
+        this.idMagazzino = idMagazzino;
         this.idCorriere = idCorriere;
+        this.note = note;
         this.destinazione = destinazione;
         this.statoOrdine = Stato_Ordine.IN_NEGOZIO;
         this.codiceRitiro = generaCodice();
@@ -85,4 +89,47 @@ public class SimpleOrdine implements Ordine {
         this.statoOrdine = statoOrdine;
     }
 
+    @Override
+    public void setIdMagazzino(int id){
+        this.idMagazzino = id;
+    }
+
+    @Override
+    public void setIdCorriere(int id) {
+        this.idCorriere = id;
+    }
+
+    @Override
+    public int getIdCorriere() {
+        return this.idCorriere;
+    }
+
+    @Override
+    public String getNote() {
+        return this.note;
+    }
+
+    @Override
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    @Override
+    public int getIdMagazzino(){
+        return this.idMagazzino;
+    }
+
+    @Override
+    public String toString() {
+        return "SimpleOrdine{" +
+                "idOrdine=" + idOrdine +
+                ", idCliente=" + idCliente +
+                ", destinazione='" + destinazione + '\'' +
+                ", note='" + note + '\'' +
+                ", idMagazzino=" + idMagazzino +
+                ", codiceRitiro=" + codiceRitiro +
+                ", idCorriere=" + idCorriere +
+                ", statoOrdine=" + statoOrdine +
+                '}';
+    }
 }

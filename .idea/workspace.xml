@@ -5,7 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7fc1f5a-9379-45ca-a83e-7f5efb6510ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/C3View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/IImpiegato.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineConfermaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaClienteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaCorriereController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaDestinazioneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/C3Application.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/impiegato/InterfacciaImpiegato.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/impiegato/NuovoOrdineConferma.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/impiegato/NuovoOrdineSceltaCliente.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/impiegato/NuovoOrdineSceltaCorriere.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/impiegato/NuovoOrdineSceltaDestinazione.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/AppC3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/AppC3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/JavaFxC3.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/JavaFxC3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/Ordine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/SimpleOrdine.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/SimpleOrdine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/resources.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +46,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Documents\GitHub\ProgettoC3\app\src\main\java\it\unicam\cs\ids\c3\view\impiegato" />
+      <recent name="C:\Users\Administrator\Documents\GitHub\ProgettoC3\app\src\main\resources\impiegato" />
+      <recent name="C:\Users\Administrator\Documents\GitHub\ProgettoC3\app\src\main\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="it.unicam.cs.ids.c3" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="it.unicam.cs.ids.c3.view" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,7 +72,10 @@
       <workItem from="1620145508906" duration="766000" />
       <workItem from="1620146289012" duration="4828000" />
       <workItem from="1620222627651" duration="3771000" />
-      <workItem from="1620227140479" duration="905000" />
+      <workItem from="1620227140479" duration="1834000" />
+      <workItem from="1620310607883" duration="3083000" />
+      <workItem from="1620314652020" duration="2248000" />
+      <workItem from="1620326198438" duration="1947000" />
     </task>
     <servers />
   </component>

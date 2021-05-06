@@ -55,4 +55,16 @@ public interface Ordine {
      * @param statoOrdine il nuovo stato dell'ordine
      */
     void setStatoOrdine(Stato_Ordine statoOrdine);
+
+    int getIdMagazzino();
+
+    void setIdMagazzino(int id);
+
+    void setIdCorriere(int id);
+
+    int getIdCorriere();
+
+    String getNote();
+
+    void setNote(String note);
 }
