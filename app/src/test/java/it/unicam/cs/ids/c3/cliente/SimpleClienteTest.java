@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe dei test per SimpleCliente.
+ */
 class SimpleClienteTest {
 
     @Test
@@ -12,7 +15,7 @@ class SimpleClienteTest {
                 new SimpleCliente(1,"Andrea","Laureati","via roma 6");
 
         assertEquals(testIdCliente.getId(),1);
-        assertNotEquals(testIdCliente.getNome(),34);
+        assertNotEquals(testIdCliente.getId(),34);
     }
 
     @Test
