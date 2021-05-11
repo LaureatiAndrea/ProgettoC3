@@ -16,14 +16,16 @@ public class SimpleOrdine implements Ordine {
     private String destinazione;
     private String note;
     private int idMagazzino;
+    private int idNegozio;
     private int codiceRitiro;
     private int idCorriere;
     private Stato_Ordine statoOrdine;
 
-    public SimpleOrdine(int idCliente,int idCorriere,String destinazione, int idMagazzino,String note){
+    public SimpleOrdine(int idCliente,int idCorriere,String destinazione, int idMagazzino,int idNegozio, String note){
         this.idCliente = idCliente;
         this.idMagazzino = idMagazzino;
         this.idCorriere = idCorriere;
+        this.idNegozio = idNegozio;
         this.note = note;
         this.destinazione = destinazione;
         this.statoOrdine = Stato_Ordine.IN_NEGOZIO;
@@ -102,6 +104,16 @@ public class SimpleOrdine implements Ordine {
     @Override
     public int getIdCorriere() {
         return this.idCorriere;
+    }
+
+    @Override
+    public int getIdNegozio() {
+        return this.idNegozio;
+    }
+
+    @Override
+    public void setIdNegozio(int idNegozio) {
+        this.idNegozio = idNegozio;
     }
 
     @Override

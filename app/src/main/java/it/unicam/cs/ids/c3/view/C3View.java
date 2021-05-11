@@ -30,6 +30,21 @@ public class C3View implements Initializable {
         corriereButton.setOnMouseExited(e -> corriereButton.setStyle("-fx-background-color: TRANSPARENT"));
     }
 
+
+    @FXML
+    void apriMenuCorriere(ActionEvent event) {
+        Stage primaryStage = (Stage)impiegatoButton.getScene().getWindow();
+        Parent root = null;
+        try{
+            root = FXMLLoader.load(getClass().getResource("/corriere/InterfacciaCorriere.fxml"));
+        }catch (IOException e){
+            e.printStackTrace();
+            System.out.println("Impossibile aprire l'interfaccia del corriere");
+        }
+        primaryStage.getScene().setRoot(root);
+        primaryStage.sizeToScene();
+    }
+
     @FXML
     void apriMenuImpiegato(ActionEvent event){
         Stage primaryStage = (Stage)impiegatoButton.getScene().getWindow();

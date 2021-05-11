@@ -30,6 +30,9 @@ public class GestoreOrdini {
         //TODO : Eliminare ( Dati di prova, vanno sostituiti con un database nella prossima iterazione )
     }
 
+    public ArrayList<Ordine> getOrdini(){
+        return this.ordini;
+    }
     /**
      * Aggiunge un ordine alla lista degli ordini
      * @param toAdd l'ordine da aggiungere
@@ -84,5 +87,15 @@ public class GestoreOrdini {
      */
     public void setTemp(Ordine temp){
         this.temp = temp;
+    }
+
+    public ArrayList<Ordine> getOrdiniInNegozio(){
+        ArrayList<Ordine> toReturn = new ArrayList<>();
+        for(Ordine o : this.ordini){
+            if(o.getStatoOrdine().equals(Stato_Ordine.IN_NEGOZIO)){
+                toReturn.add(o);
+            }
+        }
+        return toReturn;
     }
 }

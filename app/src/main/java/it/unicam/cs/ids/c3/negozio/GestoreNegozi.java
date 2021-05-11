@@ -37,7 +37,7 @@ public class GestoreNegozi {
      * Aggiunge un negozio alla lista dei negozi che usano il sistema C3.
      * @param toAdd il negozio da aggiungere.
      */
-    private void addNegozio(Negozio toAdd){
+    public void addNegozio(Negozio toAdd){
         this.negozi.add(toAdd);
     }
 
@@ -46,7 +46,7 @@ public class GestoreNegozi {
      * @param id l'id del negozio da cercare
      * @return il negozio se esiste, null altrimenti.
      */
-    private Negozio getNegozio(int id){
+    public Negozio getNegozio(int id){
         for(Negozio n : negozi){
             if(n.getId()==id){
                 return n;
@@ -59,7 +59,7 @@ public class GestoreNegozi {
      * Rimuove un negozio dalla lista dei negozi che usano il sistema C3.
      * @param id l'id del negozio da rimuovere.
      */
-    private void removeNegozio(int id){
+    public void removeNegozio(int id){
         for(Negozio n : negozi){
             if(n.getId()==id){
                 negozi.remove(n);

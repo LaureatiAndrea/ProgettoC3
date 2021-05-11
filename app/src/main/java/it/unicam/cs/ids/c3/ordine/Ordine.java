@@ -64,7 +64,11 @@ public interface Ordine {
 
     int getIdCorriere();
 
+    int getIdNegozio();
+    void setIdNegozio(int idNegozio);
+
     String getNote();
 
     void setNote(String note);
+
 }

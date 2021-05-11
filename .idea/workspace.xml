@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7fc1f5a-9379-45ca-a83e-7f5efb6510ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/commerciante/SimpleCommercianteTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/corriere/SimpleCorriereTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/impiegato/SimpleImpiegatoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/magazziniere/SimpleMagazziniereTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/magazzino/SimpleMagazzinoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/corriere/ICorriere.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/corriere/PrelevaOrdineController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/resources/corriere/InterfacciaCorriere.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/cliente/SimpleClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/cliente/SimpleClienteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/negozio/GestoreNegozi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/negozio/GestoreNegozi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/GestoreOrdini.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/GestoreOrdini.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/Ordine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/SimpleOrdine.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/SimpleOrdine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/C3View.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/C3View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/C3Application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/C3Application.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -198,6 +203,8 @@
       <workItem from="1620375992655" duration="1570000" />
       <workItem from="1620655770482" duration="5946000" />
       <workItem from="1620661787211" duration="23000" />
+      <workItem from="1620672543771" duration="2917000" />
+      <workItem from="1620718640068" duration="1231000" />
     </task>
     <servers />
   </component>
