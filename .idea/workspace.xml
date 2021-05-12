@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7fc1f5a-9379-45ca-a83e-7f5efb6510ac" name="Default Changelist" comment="" />
+    <list default="true" id="f7fc1f5a-9379-45ca-a83e-7f5efb6510ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/negozio/SimpleNegozioTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/ordine/SimpleOrdineTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/corriere/SimpleCorriereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/corriere/SimpleCorriereTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/impiegato/SimpleImpiegatoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/impiegato/SimpleImpiegatoTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -34,6 +41,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -53,36 +61,34 @@
       <recent name="it.unicam.cs.ids.c3" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="it.unicam.cs.ids.c3.ordine" />
+      <recent name="it.unicam.cs.ids.c3.negozio" />
       <recent name="it.unicam.cs.ids.c3.magazzino" />
       <recent name="it.unicam.cs.ids.c3.magazziniere" />
       <recent name="it.unicam.cs.ids.c3.impiegato" />
-      <recent name="it.unicam.cs.ids.c3.corriere" />
-      <recent name="it.unicam.cs.ids.c3.commerciante" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="it.unicam.cs.ids.c3.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SimpleMagazzinoTest">
-    <configuration name="AppC3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.unicam.cs.ids.c3.AppC3" />
-      <module name="ProgettoC3.app.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.unicam.cs.ids.c3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="Gradle.Tests in 'ProgettoC3.app.test'">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleClienteTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SimpleCorriereTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.cliente.SimpleClienteTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.corriere.SimpleCorriereTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -98,12 +104,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SimpleCommercianteTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SimpleImpiegatoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.commerciante.SimpleCommercianteTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.impiegato.SimpleImpiegatoTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -119,12 +125,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SimpleMagazziniereTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SimpleImpiegatoTest.testEquals" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.magazziniere.SimpleMagazziniereTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.impiegato.SimpleImpiegatoTest.testEquals&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -140,12 +146,33 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SimpleMagazzinoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SimpleImpiegatoTest.testHashCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.magazzino.SimpleMagazzinoTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.impiegato.SimpleImpiegatoTest.testHashCode&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'ProgettoC3.app.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests *" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -163,11 +190,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.SimpleMagazzinoTest" />
-        <item itemvalue="Gradle.SimpleClienteTest" />
-        <item itemvalue="Gradle.SimpleCommercianteTest" />
-        <item itemvalue="Gradle.SimpleMagazziniereTest" />
-        <item itemvalue="Application.AppC3" />
+        <item itemvalue="Gradle.Tests in 'ProgettoC3.app.test'" />
+        <item itemvalue="Gradle.SimpleImpiegatoTest" />
+        <item itemvalue="Gradle.SimpleImpiegatoTest.testEquals" />
+        <item itemvalue="Gradle.SimpleImpiegatoTest.testHashCode" />
+        <item itemvalue="Gradle.SimpleCorriereTest" />
       </list>
     </recent_temporary>
   </component>
@@ -193,6 +220,8 @@
       <workItem from="1620661787211" duration="23000" />
       <workItem from="1620672543771" duration="2917000" />
       <workItem from="1620718640068" duration="1231000" />
+      <workItem from="1620800366886" duration="104000" />
+      <workItem from="1620825935196" duration="2944000" />
     </task>
     <servers />
   </component>
