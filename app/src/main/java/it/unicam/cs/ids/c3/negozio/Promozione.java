@@ -12,6 +12,7 @@ public class Promozione {
 
     private int idPromozione;
     private double percentualeSconto;
+    //TODO : Cambiare in PROMOZIONE ATTIVA
     private boolean statoPromozione;
 
     public Promozione(int id, double percentualeSconto){

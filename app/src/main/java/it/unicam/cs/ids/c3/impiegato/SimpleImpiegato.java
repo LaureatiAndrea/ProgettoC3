@@ -76,7 +76,7 @@ public class SimpleImpiegato implements Impiegato {
 
     @Override
     public String toString() {
-        //Restituisce una descrizione dell'impiegato nel formato "ID - Cognome Nome, id negozio 132"
+        //Restituisce una descrizione dell'impiegato nel formato "ID - Cognome Nome, id negozio 132"id
         return id + " - " + cognome + " " + nome + ", id negozio " + idNegozio;
     }
 }

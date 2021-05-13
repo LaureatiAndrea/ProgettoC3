@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7fc1f5a-9379-45ca-a83e-7f5efb6510ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/negozio/SimpleNegozioTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/ordine/SimpleOrdineTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/corriere/SimpleCorriereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/corriere/SimpleCorriereTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/impiegato/SimpleImpiegatoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/impiegato/SimpleImpiegatoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualParadigm/C3 Visual Paradigm.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/VisualParadigm/C3 Visual Paradigm.vpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/impiegato/SimpleImpiegato.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/impiegato/SimpleImpiegato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/negozio/Promozione.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/negozio/Promozione.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
