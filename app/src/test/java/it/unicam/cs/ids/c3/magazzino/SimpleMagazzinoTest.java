@@ -38,21 +38,21 @@ class SimpleMagazzinoTest {
 
     @Test
     void testGetIndirizzo() {
-        SimpleMagazzino testIndirizzoCliente =
+        SimpleMagazzino testIndirizzoMagazzino =
                 new SimpleMagazzino(1, "Centro commerciale X", "Via cardo 22");
 
-        assertEquals("Via cardo 22", testIndirizzoCliente.getIndirizzo());
-        assertNotEquals(testIndirizzoCliente.getIndirizzo(),"Paperopoli");
+        assertEquals("Via cardo 22", testIndirizzoMagazzino.getIndirizzo());
+        assertNotEquals(testIndirizzoMagazzino.getIndirizzo(),"Paperopoli");
     }
 
     @Test
     void testSetIndirizzo() {
-        SimpleMagazzino testIndirizzoCliente =
+        SimpleMagazzino testIndirizzoMagazzino =
                 new SimpleMagazzino(1, "Centro commerciale X", "Via cardo 22");
 
-        testIndirizzoCliente.setIndirizzo("Paperopoli");
-        assertEquals(testIndirizzoCliente.getIndirizzo(),"Paperopoli");
-        assertNotEquals("Topolinia",testIndirizzoCliente.getIndirizzo());
+        testIndirizzoMagazzino.setIndirizzo("Paperopoli");
+        assertEquals(testIndirizzoMagazzino.getIndirizzo(),"Paperopoli");
+        assertNotEquals("Topolinia",testIndirizzoMagazzino.getIndirizzo());
     }
 
     @Test
