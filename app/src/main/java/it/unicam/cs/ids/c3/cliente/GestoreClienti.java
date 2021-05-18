@@ -1,5 +1,7 @@
 package it.unicam.cs.ids.c3.cliente;
 
+import it.unicam.cs.ids.c3.database.MySqlDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 public class GestoreClienti {
 
     private ArrayList<Cliente> clienti;
+    private MySqlDatabase db;
     private static GestoreClienti instance;
 
     /**
@@ -25,11 +28,9 @@ public class GestoreClienti {
     }
 
     public GestoreClienti(){
-        clienti = new ArrayList<>();
-        //TODO : Eliminare ( Dati di prova, vanno sostituiti con un database nella prossima iterazione )
-        clienti.add(new SimpleCliente(1, "Andrea", "Laureati", "via fontepezzana 44"));
-        clienti.add(new SimpleCliente(2, "Marco", "Gaetani", "via colleappeso 12"));
-        clienti.add(new SimpleCliente(12, "Francesco", "Amadio", "via Pressa 10"));
+        //La lista viene recuperata direttamente dal database.
+        db = MySqlDatabase.getInstance();
+        clienti = db.getAllClienti();
     }
 
     /**
@@ -37,6 +38,7 @@ public class GestoreClienti {
      * @param c il cliente da aggiungere.
      */
     public void addCliente(Cliente c){
+        //TODO : Adattare al database
         clienti.add(c);
     }
 
@@ -45,6 +47,7 @@ public class GestoreClienti {
      * @param c il cliente da rimuovere.
      */
     public void removeCliente(Cliente c){
+        //TODO : Adattare al database
         clienti.remove(c);
     }
 
@@ -54,6 +57,7 @@ public class GestoreClienti {
      * @return il cliente se é presente, null altrimenti.
      */
     public Cliente getCliente(int id){
+        // TODO : Considera se adattare al database
         for(Cliente c : clienti){
             if (c.getId() == id )
             return c;
@@ -66,6 +70,7 @@ public class GestoreClienti {
      * @return la lista dei clienti registrati.
      */
     public ArrayList<Cliente> getClienti(){
+        //TODO : Considera se adattare al database
         return this.clienti;
     }
 }

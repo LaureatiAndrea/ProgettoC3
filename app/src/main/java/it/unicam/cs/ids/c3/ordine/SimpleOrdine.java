@@ -21,7 +21,8 @@ public class SimpleOrdine implements Ordine {
     private int idCorriere;
     private Stato_Ordine statoOrdine;
 
-    public SimpleOrdine(int idCliente,int idCorriere,String destinazione, int idMagazzino,int idNegozio, String note){
+    public SimpleOrdine(int idOrdine, int idCliente,int idCorriere,String destinazione, int idMagazzino,int idNegozio, String note){
+        this.idOrdine = idOrdine;
         this.idCliente = idCliente;
         this.idMagazzino = idMagazzino;
         this.idCorriere = idCorriere;
@@ -30,6 +31,20 @@ public class SimpleOrdine implements Ordine {
         this.destinazione = destinazione;
         this.statoOrdine = Stato_Ordine.IN_NEGOZIO;
         this.codiceRitiro = generaCodice();
+    }
+
+    public SimpleOrdine(int idOrdine, int idCliente, String destinazione, String note, int idMagazzino, int idNegozio,
+                        int codiceRitiro, int idCorriere, Stato_Ordine stato){
+        //Costruttore utilizzato dal database.
+        this.idOrdine = idOrdine;
+        this.idCliente = idCliente;
+        this.destinazione = destinazione;
+        this.note = note;
+        this.idMagazzino = idMagazzino;
+        this.idNegozio = idNegozio;
+        this.codiceRitiro = codiceRitiro;
+        this.idCorriere = idCorriere;
+        this.statoOrdine = stato;
     }
 
     /**
@@ -141,6 +156,7 @@ public class SimpleOrdine implements Ordine {
                 ", idMagazzino=" + idMagazzino +
                 ", codiceRitiro=" + codiceRitiro +
                 ", idCorriere=" + idCorriere +
+                ", idNegozio=" + idNegozio +
                 ", statoOrdine=" + statoOrdine +
                 '}';
     }

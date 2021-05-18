@@ -19,6 +19,7 @@ public class IImpiegato implements Initializable {
 
     @FXML
     void creaNuovoOrdine(ActionEvent event) {
+        // Inizia il processo di creazione di un nuovo ordine.
         Stage primaryStage = (Stage)creaNuovoOrdineButton.getScene().getWindow();
         Parent root = null;
         try{
@@ -33,6 +34,7 @@ public class IImpiegato implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // I colori dei button devono cambiare quando si hovera sopra col mouse.
         creaNuovoOrdineButton.setOnMouseEntered(e -> creaNuovoOrdineButton.setStyle("-fx-background-color: DARKGRAY"));
         creaNuovoOrdineButton.setOnMouseExited(e -> creaNuovoOrdineButton.setStyle("-fx-background-color: TRANSPARENT"));
     }

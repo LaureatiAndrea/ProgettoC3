@@ -56,7 +56,8 @@ public class NuovoOrdineSceltaClienteController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR,"Devi scegliere un cliente");
             alert.show();
         }else {
-            gestoreOrdini.setTemp(new SimpleOrdine(clienteComboBox.getValue().getId(), -1, null, -1,-1,null));
+            //TODO : Gestire idNegozio con il negozio in cui lavora l'impiegato loggato.
+            gestoreOrdini.setTemp(new SimpleOrdine(gestoreOrdini.getLastId(),clienteComboBox.getValue().getId(), -1, null, -1,1,null));
             //Gestisce l'apertura della finestra successiva
             Stage primaryStage = (Stage) confermaButton.getScene().getWindow();
             Parent root = null;

@@ -70,8 +70,6 @@ public class PrelevaOrdineController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //TODO : Elimina , ordine di esempio
-        gestoreOrdini.addOrdine(new SimpleOrdine(1,1,"Via Dal cazzo",1,1,"Ciao"));
         //Setta la tabella per ospitare ordini
         //TODO : Deve visualizzare solo gli ordini ancora da prelevare ( OK FATTO )
         tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInNegozio()));

@@ -73,7 +73,6 @@ public class NuovoOrdineSceltaDestinazioneController implements Initializable {
                 nextWindow();
             }
         }
-        // Gestire il passaggio dei dati tra finestre
     }
 
     void nextWindow(){

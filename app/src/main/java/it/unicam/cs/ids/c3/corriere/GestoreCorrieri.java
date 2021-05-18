@@ -1,5 +1,7 @@
 package it.unicam.cs.ids.c3.corriere;
 
+import it.unicam.cs.ids.c3.database.MySqlDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 public class GestoreCorrieri {
 
     private ArrayList<Corriere> corrieri;
+    private MySqlDatabase db;
     private static GestoreCorrieri instance;
 
     /**
@@ -25,11 +28,9 @@ public class GestoreCorrieri {
     }
 
     public GestoreCorrieri(){
-        corrieri = new ArrayList<>();
-        //TODO : Eliminare ( Dati di prova, vanno sostituiti con un database nella prossima iterazione )
-        corrieri.add(new SimpleCorriere(1, "Claudio", "Barchetto"));
-        corrieri.add(new SimpleCorriere(2, "Paolo", "Bitta"));
-        corrieri.add(new SimpleCorriere(3, "Enrico", "Papi"));
+        //La lista viene recuperata direttamente dal database
+        db = MySqlDatabase.getInstance();
+        corrieri = db.getAllCorrieri();
     }
 
     /**
@@ -37,6 +38,7 @@ public class GestoreCorrieri {
      * @param c il corriere da aggiungere.
      */
     public void addCorriere(Corriere c){
+        //TODO : Adattare al database
         corrieri.add(c);
     }
 
@@ -45,6 +47,7 @@ public class GestoreCorrieri {
      * @param c il corriere da rimuovere.
      */
     public void removeCliente(Corriere c){
+        //TODO : Adattare al database
         corrieri.remove(c);
     }
 
@@ -54,6 +57,7 @@ public class GestoreCorrieri {
      * @return il corriere se é presente, null altrimenti.
      */
     public Corriere getCorriere(int id){
+        //TODO : Considerare se adattare al database
         for(Corriere c : corrieri){
             if (c.getId() == id )
                 return c;
@@ -66,6 +70,7 @@ public class GestoreCorrieri {
      * @return la lista dei corrieri registrati.
      */
     public ArrayList<Corriere> getCorrieri(){
+        //TODO : Considerare se adattare al database
         return this.corrieri;
     }
 
@@ -74,6 +79,7 @@ public class GestoreCorrieri {
      * @return la lista dei corrieri disponibili.
      */
     public ArrayList<Corriere> getCorrieriDisponibili(){
+        //TODO : Considerare se adattare al database
         ArrayList<Corriere> toReturn = new ArrayList<>();
         for(Corriere c : corrieri){
             if (c.getStato()==Stato_Corriere.DISPONIBILE){

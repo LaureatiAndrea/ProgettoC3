@@ -1,5 +1,7 @@
 package it.unicam.cs.ids.c3.ordine;
 
+import it.unicam.cs.ids.c3.database.MySqlDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 public class GestoreOrdini {
 
     private static GestoreOrdini instance;
+    private MySqlDatabase db;
     private ArrayList<Ordine> ordini;
     private Ordine temp;
 
@@ -26,8 +29,16 @@ public class GestoreOrdini {
     }
 
     public GestoreOrdini(){
+        db = MySqlDatabase.getInstance();
+        // TODO : Deve prendere la lista dal database.
+        //this.ordini = db.getAllOrdini();
         this.ordini = new ArrayList<>();
-        //TODO : Eliminare ( Dati di prova, vanno sostituiti con un database nella prossima iterazione )
+        this.ordini.add(new SimpleOrdine(1,1,1,null,2,1,"Fragile" ));
+    }
+
+    public int getLastId() {
+        //TODO : ritorna null perche non ho implementato getAllOrdini dal database.
+        return (ordini.get(ordini.size()-1).getID())+1;
     }
 
     public ArrayList<Ordine> getOrdini(){
@@ -38,7 +49,8 @@ public class GestoreOrdini {
      * @param toAdd l'ordine da aggiungere
      */
     public void addOrdine(Ordine toAdd){
-        this.ordini.add(toAdd);
+        db.addOrdine(toAdd);
+        this.ordini = db.getAllOrdini();
     }
 
     /**

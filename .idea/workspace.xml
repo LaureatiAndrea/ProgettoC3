@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7fc1f5a-9379-45ca-a83e-7f5efb6510ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/database/MySqlDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VisualParadigm/.C3 Visual Paradigm.vpp.lck" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/VisualParadigm/C3 Visual Paradigm.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/VisualParadigm/C3 Visual Paradigm.vpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/impiegato/SimpleImpiegato.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/impiegato/SimpleImpiegato.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/negozio/Promozione.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/negozio/Promozione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/cliente/GestoreClienti.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/cliente/GestoreClienti.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/corriere/GestoreCorrieri.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/corriere/GestoreCorrieri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/corriere/SimpleCorriere.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/corriere/SimpleCorriere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/magazzino/GestoreMagazzini.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/magazzino/GestoreMagazzini.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/GestoreOrdini.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/GestoreOrdini.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/SimpleOrdine.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/ordine/SimpleOrdine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/corriere/PrelevaOrdineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/corriere/PrelevaOrdineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/IImpiegato.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/IImpiegato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineConfermaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineConfermaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaCorriereController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaCorriereController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaDestinazioneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato/NuovoOrdineSceltaDestinazioneController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +58,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -59,17 +73,17 @@
       <recent name="it.unicam.cs.ids.c3" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="it.unicam.cs.ids.c3.database" />
       <recent name="it.unicam.cs.ids.c3.ordine" />
       <recent name="it.unicam.cs.ids.c3.negozio" />
       <recent name="it.unicam.cs.ids.c3.magazzino" />
       <recent name="it.unicam.cs.ids.c3.magazziniere" />
-      <recent name="it.unicam.cs.ids.c3.impiegato" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="it.unicam.cs.ids.c3.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'ProgettoC3.app.test'">
+  <component name="RunManager" selected="Gradle.MySqlDatabaseTest.MySqlDatabaseTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -81,12 +95,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleCorriereTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="MySqlDatabaseTest.MySqlDatabaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.corriere.SimpleCorriereTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.database.MySqlDatabaseTest.MySqlDatabaseTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -188,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MySqlDatabaseTest.MySqlDatabaseTest" />
         <item itemvalue="Gradle.Tests in 'ProgettoC3.app.test'" />
         <item itemvalue="Gradle.SimpleImpiegatoTest" />
         <item itemvalue="Gradle.SimpleImpiegatoTest.testEquals" />
         <item itemvalue="Gradle.SimpleImpiegatoTest.testHashCode" />
-        <item itemvalue="Gradle.SimpleCorriereTest" />
       </list>
     </recent_temporary>
   </component>
@@ -220,6 +234,9 @@
       <workItem from="1620718640068" duration="1231000" />
       <workItem from="1620800366886" duration="104000" />
       <workItem from="1620825935196" duration="2944000" />
+      <workItem from="1621262607774" duration="263000" />
+      <workItem from="1621266796385" duration="6899000" />
+      <workItem from="1621326838289" duration="5159000" />
     </task>
     <servers />
   </component>

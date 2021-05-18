@@ -54,7 +54,6 @@ public class NuovoOrdineSceltaCorriereController implements Initializable {
             alert.show();
         }else {
             gestoreOrdini.getTemp().setIdCorriere(corriereComboBox.getValue().getId());
-
             Stage primaryStage = (Stage) confermaButton.getScene().getWindow();
             Parent root = null;
             try {

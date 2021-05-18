@@ -1,5 +1,7 @@
 package it.unicam.cs.ids.c3.magazzino;
 
+import it.unicam.cs.ids.c3.database.MySqlDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 public class GestoreMagazzini {
 
     private ArrayList<Magazzino> magazzini;
+    MySqlDatabase db;
     private static GestoreMagazzini instance;
 
     /**
@@ -25,10 +28,9 @@ public class GestoreMagazzini {
     }
 
     public GestoreMagazzini(){
-        this.magazzini = new ArrayList<>();
-        //TODO : Eliminare ( Dati di prova, vanno sostituiti con un database nella prossima iterazione )
-        this.magazzini.add(new SimpleMagazzino(1, "Centro commerciale X", "Via cardo 22"));
-        this.magazzini.add(new SimpleMagazzino(2, "Magazzino Centrale", "Via P.Fossa 144"));
+        //La lista viene recuperata direttamente dal database.
+        db = MySqlDatabase.getInstance();
+        this.magazzini = db.getAllMagazzini();
     }
 
     /**
@@ -36,6 +38,7 @@ public class GestoreMagazzini {
      * @param m il magazzino da aggiungere.
      */
     public void addMagazzino(Magazzino m){
+        //TODO : Adattare al database
         magazzini.add(m);
     }
 
@@ -44,6 +47,7 @@ public class GestoreMagazzini {
      * @param m il magazzino da rimuovere.
      */
     public void removeMagazzino(Magazzino m){
+        //TODO : Adattare al database
         magazzini.remove(m);
     }
 
@@ -52,6 +56,7 @@ public class GestoreMagazzini {
      * @return la lista dei magazzini registrati.
      */
     public ArrayList<Magazzino> getMagazzini(){
+        //TODO : Considerare se adattare al database
         return this.magazzini;
     }
 
@@ -61,6 +66,7 @@ public class GestoreMagazzini {
      * @return il magazzino se é presente, null altrimenti.
      */
     public Magazzino getMagazzino(int id){
+        //TODO : Considerare se adattare al database
         for(Magazzino m : magazzini){
             if(m.getId() == id){
                 return m;
