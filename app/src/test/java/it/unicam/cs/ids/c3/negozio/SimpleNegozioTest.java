@@ -3,6 +3,8 @@ package it.unicam.cs.ids.c3.negozio;
 import it.unicam.cs.ids.c3.magazzino.SimpleMagazzino;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SimpleNegozioTest {
@@ -81,6 +83,25 @@ class SimpleNegozioTest {
         assertNotEquals(testCategoriaNegozio.getCategoria(), Categoria_Merceologica.ALIMENTARI);
     }
 
-    //TODO: implementare i test rimanenti
+    @Test
+    void getPromozioni() {
+        SimpleNegozio testPromozioniNegozio =
+                new SimpleNegozio(2, "BelNegozio", "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO);
+        ArrayList<Promozione> promozioni = new ArrayList<>();
+        Promozione p1 = new Promozione(1,20.00);
+        Promozione p2 = new Promozione(2,10.50);
+        Promozione p3 = new Promozione(3,15.50);
+        promozioni.add(p1);
+        promozioni.add(p2);
+        promozioni.add(p3);
+
+        testPromozioniNegozio.addPromozione(p1);
+        testPromozioniNegozio.addPromozione(p2);
+        testPromozioniNegozio.addPromozione(p3);
+        assertEquals(promozioni,testPromozioniNegozio.getPromozioni());
+    }
+
+    //TODO: test rimanenti(lanciaPromozione, terminaPromozione, getPromozione, addPromozione,
+    //                     removePromozione)
 
 }
