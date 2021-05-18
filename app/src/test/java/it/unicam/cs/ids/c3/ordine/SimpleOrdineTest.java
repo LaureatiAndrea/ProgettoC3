@@ -9,7 +9,7 @@ class SimpleOrdineTest {
     @Test
     void testGetIdCliente() {
         SimpleOrdine testIdCliente =
-                new SimpleOrdine(1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(0,1,3,"destinazione",4,2,"note");
 
         assertEquals(testIdCliente.getIdCliente(),1);
         assertNotEquals(testIdCliente.getIdCliente(),3);
@@ -18,7 +18,7 @@ class SimpleOrdineTest {
     @Test
     void testSetIdCliente() {
         SimpleOrdine testIdCliente =
-                new SimpleOrdine(1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(0,1,3,"destinazione",4,2,"note");
 
         testIdCliente.setIdCliente(11);
         assertEquals(testIdCliente.getIdCliente(),11);
@@ -28,7 +28,7 @@ class SimpleOrdineTest {
     @Test
     void testGetIdCorriere() {
         SimpleOrdine testIdCorriere =
-                new SimpleOrdine(5,7,"casa",8,6,"postit");
+                new SimpleOrdine(0,5,7,"casa",8,6,"postit");
 
         assertEquals(testIdCorriere.getIdCorriere(),7);
         assertNotEquals(testIdCorriere.getIdCorriere(),5);
@@ -37,7 +37,7 @@ class SimpleOrdineTest {
     @Test
     void testSetIdCorriere() {
         SimpleOrdine testIdCorriere =
-                new SimpleOrdine(5,7,"casa",8,6,"postit");
+                new SimpleOrdine(0,5,7,"casa",8,6,"postit");
 
         testIdCorriere.setIdCorriere(17);
         assertEquals(testIdCorriere.getIdCorriere(),17);
@@ -47,7 +47,7 @@ class SimpleOrdineTest {
     @Test
     void testGetDestinazione() {
         SimpleOrdine testDestinazione =
-                new SimpleOrdine(1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(0,1,3,"destinazione",4,2,"note");
 
         assertEquals(testDestinazione.getDestinazione(),"destinazione");
         assertNotEquals(testDestinazione.getDestinazione(),"ultima");
@@ -56,7 +56,7 @@ class SimpleOrdineTest {
     @Test
     void testSetDestinazione() {
         SimpleOrdine testDestinazione =
-                new SimpleOrdine(1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(0,1,3,"destinazione",4,2,"note");
 
         testDestinazione.setDestinazione("ultima");
         assertEquals(testDestinazione.getDestinazione(),"ultima");
@@ -66,7 +66,7 @@ class SimpleOrdineTest {
     @Test
     void testGetIdMagazzino() {
         SimpleOrdine testIdMagazzino =
-                new SimpleOrdine(5,7,"casa",8,6,"postit");
+                new SimpleOrdine(0,5,7,"casa",8,6,"postit");
 
         assertEquals(testIdMagazzino.getIdMagazzino(),8);
         assertNotEquals(testIdMagazzino.getIdCorriere(),5);
@@ -75,7 +75,7 @@ class SimpleOrdineTest {
     @Test
     void testSetIdMagazzino() {
         SimpleOrdine testIdMagazzino =
-                new SimpleOrdine(5,7,"casa",8,6,"postit");
+                new SimpleOrdine(0,5,7,"casa",8,6,"postit");
 
         testIdMagazzino.setIdMagazzino(17);
         assertEquals(testIdMagazzino.getIdMagazzino(),17);
@@ -85,7 +85,7 @@ class SimpleOrdineTest {
     @Test
     void testGetIdNegozio() {
         SimpleOrdine testIdNegozio =
-                new SimpleOrdine(1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(0,1,3,"destinazione",4,2,"note");
 
         assertEquals(testIdNegozio.getIdNegozio(),2);
         assertNotEquals(testIdNegozio.getIdNegozio(),1);
@@ -94,7 +94,7 @@ class SimpleOrdineTest {
     @Test
     void testSetIdNegozio() {
         SimpleOrdine testIdNegozio =
-                new SimpleOrdine(1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(0,1,3,"destinazione",4,2,"note");
 
         testIdNegozio.setIdNegozio(12);
         assertEquals(testIdNegozio.getIdNegozio(),12);
@@ -104,7 +104,7 @@ class SimpleOrdineTest {
     @Test
     void testGetNote() {
         SimpleOrdine testNote =
-                new SimpleOrdine(1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(0,1,3,"destinazione",4,2,"note");
 
         assertEquals(testNote.getNote(),"note");
         assertNotEquals(testNote.getNote(),"destinazione");
@@ -113,7 +113,7 @@ class SimpleOrdineTest {
     @Test
     void testSetNote() {
         SimpleOrdine testNote =
-                new SimpleOrdine(1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(0,1,3,"destinazione",4,2,"note");
 
         testNote.setNote("corri");
         assertEquals(testNote.getNote(),"corri");
