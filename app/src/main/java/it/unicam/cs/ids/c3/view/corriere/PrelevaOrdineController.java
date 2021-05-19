@@ -64,7 +64,9 @@ public class PrelevaOrdineController implements Initializable {
     @FXML
     void confermaButtonPressed(ActionEvent event) {
         //Deve settare lo stato dell'ordine selezionato come TRASPORTO IN CORSO
-        tableView.getSelectionModel().getSelectedItem().setStatoOrdine(Stato_Ordine.TRASPORTO_IN_CORSO);
+        int idOrdine = tableView.getSelectionModel().getSelectedItem().getID();
+        gestoreOrdini.setStatoOrdine(idOrdine, Stato_Ordine.TRASPORTO_IN_CORSO);
+        gestoreOrdini.updateList();
         tableView.getItems().remove(tableView.getSelectionModel().getSelectedItem());
     }
 

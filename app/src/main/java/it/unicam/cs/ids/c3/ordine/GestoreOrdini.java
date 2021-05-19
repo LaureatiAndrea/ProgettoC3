@@ -30,13 +30,10 @@ public class GestoreOrdini {
 
     public GestoreOrdini(){
         db = MySqlDatabase.getInstance();
-        // TODO : Deve prendere la lista dal database.
-        //this.ordini = db.getAllOrdini();
-        this.ordini = new ArrayList<>();
-        this.ordini.add(new SimpleOrdine(1,1,1,null,2,1,"Fragile" ));
+        ordini = db.getAllOrdini();
     }
 
-    public int getLastId() {
+    public int getNextId() {
         //TODO : ritorna null perche non ho implementato getAllOrdini dal database.
         return (ordini.get(ordini.size()-1).getID())+1;
     }
@@ -109,5 +106,14 @@ public class GestoreOrdini {
             }
         }
         return toReturn;
+    }
+
+    public void setStatoOrdine(int idOrdine, Stato_Ordine statoOrdine) {
+        db.setStatoOrdine(idOrdine, statoOrdine.name());
+    }
+
+    public void updateList() {
+        //TODO : Aggiorna la lista con i valori del database
+        this.ordini = db.getAllOrdini();
     }
 }

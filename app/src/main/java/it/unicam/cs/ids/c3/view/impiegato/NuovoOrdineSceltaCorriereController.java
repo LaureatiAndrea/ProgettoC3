@@ -71,7 +71,7 @@ public class NuovoOrdineSceltaCorriereController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Deve inizializzare la combobox con i corrieri disponibili
-        for(Corriere c : gestoreCorrieri.getCorrieri()){
+        for(Corriere c : gestoreCorrieri.getCorrieriDisponibili()){
             corriereComboBox.getItems().add(c);
         }
     }

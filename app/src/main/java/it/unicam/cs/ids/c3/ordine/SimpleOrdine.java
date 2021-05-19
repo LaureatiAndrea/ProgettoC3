@@ -34,7 +34,7 @@ public class SimpleOrdine implements Ordine {
     }
 
     public SimpleOrdine(int idOrdine, int idCliente, String destinazione, String note, int idMagazzino, int idNegozio,
-                        int codiceRitiro, int idCorriere, Stato_Ordine stato){
+                        int codiceRitiro, int idCorriere, String stato){
         //Costruttore utilizzato dal database.
         this.idOrdine = idOrdine;
         this.idCliente = idCliente;
@@ -44,7 +44,7 @@ public class SimpleOrdine implements Ordine {
         this.idNegozio = idNegozio;
         this.codiceRitiro = codiceRitiro;
         this.idCorriere = idCorriere;
-        this.statoOrdine = stato;
+        this.statoOrdine = Stato_Ordine.valueOf(stato);
     }
 
     /**

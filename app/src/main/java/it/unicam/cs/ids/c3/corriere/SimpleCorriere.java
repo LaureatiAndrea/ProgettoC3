@@ -22,16 +22,12 @@ public class SimpleCorriere implements Corriere {
         this.statoCorriere = Stato_Corriere.DISPONIBILE;
     }
 
-    public SimpleCorriere(int id, String nome, String cognome, String statoCorriere) {
+    public SimpleCorriere(int id, String nome, String cognome, Stato_Corriere stato) {
         //Costruttore utilizzato dal database.
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
-        if(statoCorriere == "disponibile"){
-            this.statoCorriere = Stato_Corriere.DISPONIBILE;
-        }else{
-            this.statoCorriere = Stato_Corriere.NON_DISPONIBILE;
-        }
+        this.statoCorriere = stato;
     }
 
     @Override

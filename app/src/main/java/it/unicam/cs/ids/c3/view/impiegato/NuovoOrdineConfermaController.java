@@ -69,8 +69,6 @@ public class NuovoOrdineConfermaController implements Initializable {
         gestoreOrdini.clearTemp();
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Codice per il ritiro : " + codiceRitiro);
         alert.show();
-        //TODO : remove verifica
-        System.out.println(verifica);
         annullaButtonClicked(null);
     }
 

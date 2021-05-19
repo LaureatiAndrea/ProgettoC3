@@ -41,6 +41,7 @@ public class ICorriere implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // Cambia il colore del button on mouse hover.
         prelevaOrdineButton.setOnMouseEntered(e -> prelevaOrdineButton.setStyle("-fx-background-color: DARKGRAY"));
         prelevaOrdineButton.setOnMouseExited(e -> prelevaOrdineButton.setStyle("-fx-background-color: TRANSPARENT"));
         consegnaOrdineButton.setOnMouseEntered(e -> consegnaOrdineButton.setStyle("-fx-background-color: DARKGRAY"));

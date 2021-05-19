@@ -15,12 +15,14 @@ public class SimpleNegozio implements Negozio{
     private String indirizzo;
     private Categoria_Merceologica categoria;
     private ArrayList<Promozione> promozioni;
+    private int idImpiegato;
 
-    public SimpleNegozio(int id,String nome,String indirizzo,Categoria_Merceologica categoria){
+    public SimpleNegozio(int id,String nome,String indirizzo,Categoria_Merceologica categoria, int idImpiegato){
         this.id = id;
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.categoria = categoria;
+        this.idImpiegato = idImpiegato;
         promozioni = new ArrayList<>();
     }
 

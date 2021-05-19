@@ -1,5 +1,7 @@
 package it.unicam.cs.ids.c3.negozio;
 
+import it.unicam.cs.ids.c3.database.MySqlDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 public class GestoreNegozi {
 
     private static GestoreNegozi instance;
+    private MySqlDatabase db;
     private ArrayList<Negozio> negozi;
 
     /**
@@ -25,12 +28,8 @@ public class GestoreNegozi {
     }
 
     public GestoreNegozi(){
-        this.negozi = new ArrayList<>();
-        //TODO : Eliminare ( Dati di prova, vanno sostituiti con un database nella prossima iterazione )
-        this.negozi.add(new SimpleNegozio(1, "Conad", "Via turati 10", Categoria_Merceologica.ALIMENTARI));
-        this.negozi.add(new SimpleNegozio(2, "Euronics", "Via monitor 2", Categoria_Merceologica.ELETTRONICA));
-        this.negozi.add(new SimpleNegozio(3, "AbbigliaTutto", "Via pasubio 21", Categoria_Merceologica.ABBIGLIAMENTO));
-
+        db = MySqlDatabase.getInstance();
+        negozi = db.getAllNegozi();
     }
 
     /**

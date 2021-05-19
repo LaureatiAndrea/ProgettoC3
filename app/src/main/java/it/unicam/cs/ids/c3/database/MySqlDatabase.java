@@ -4,8 +4,12 @@ import it.unicam.cs.ids.c3.cliente.Cliente;
 import it.unicam.cs.ids.c3.cliente.SimpleCliente;
 import it.unicam.cs.ids.c3.corriere.Corriere;
 import it.unicam.cs.ids.c3.corriere.SimpleCorriere;
+import it.unicam.cs.ids.c3.corriere.Stato_Corriere;
 import it.unicam.cs.ids.c3.magazzino.Magazzino;
 import it.unicam.cs.ids.c3.magazzino.SimpleMagazzino;
+import it.unicam.cs.ids.c3.negozio.Categoria_Merceologica;
+import it.unicam.cs.ids.c3.negozio.Negozio;
+import it.unicam.cs.ids.c3.negozio.SimpleNegozio;
 import it.unicam.cs.ids.c3.ordine.Ordine;
 import it.unicam.cs.ids.c3.ordine.SimpleOrdine;
 import it.unicam.cs.ids.c3.ordine.Stato_Ordine;
@@ -111,7 +115,8 @@ public class MySqlDatabase {
             PreparedStatement query = connection.prepareStatement("SELECT * FROM corrieri");
             ResultSet rs = query.executeQuery();
             while(rs.next()){
-                toReturn.add(new SimpleCorriere(rs.getInt("id"),rs.getString("nome"),rs.getString("cognome"),rs.getString("stato")));
+                toReturn.add(new SimpleCorriere(rs.getInt("id"),rs.getString("nome"),
+                        rs.getString("cognome"), Stato_Corriere.valueOf(rs.getString("stato"))));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -120,8 +125,25 @@ public class MySqlDatabase {
     }
 
     public ArrayList<Ordine> getAllOrdini() {
-        // TODO : IMPLEMENTARE
-        return null;
+        ArrayList<Ordine> toReturn = new ArrayList<>();
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT * FROM ordini");
+            ResultSet rs = query.executeQuery();
+            while(rs.next()){
+                toReturn.add(new SimpleOrdine(rs.getInt("id"),
+                        rs.getInt("idCliente"),
+                        rs.getString("destinazione"),
+                        rs.getString("note"),
+                        rs.getInt("idMagazzino"),
+                        rs.getInt("idNegozio"),
+                        rs.getInt("codiceRitiro"),
+                        rs.getInt("idCorriere"),
+                        rs.getString("statoOrdine")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return toReturn;
     }
 
     public void addOrdine(Ordine toAdd) {
@@ -140,6 +162,34 @@ public class MySqlDatabase {
             query.setInt(8, toAdd.getIdMagazzino());
             query.setInt(9, toAdd.getCodiceRitiro());
 
+            int result = query.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Negozio> getAllNegozi() {
+        ArrayList<Negozio> toReturn = new ArrayList<>();
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT * FROM negozi");
+            ResultSet rs = query.executeQuery();
+            while(rs.next()){
+                toReturn.add(new SimpleNegozio(rs.getInt("id"),rs.getString("nome"),
+                        rs.getString("indirizzo"),
+                        Categoria_Merceologica.valueOf(rs.getString("categoria")), rs.getInt("idImpiegato")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return toReturn;
+    }
+
+    public void setStatoOrdine(int idOrdine, String name) {
+        try {
+            PreparedStatement query = connection.
+                    prepareStatement("UPDATE c3.ordini SET statoOrdine = ? WHERE id = ?");
+            query.setString(1, name);
+            query.setInt(2,idOrdine);
             int result = query.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
