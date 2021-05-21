@@ -195,4 +195,16 @@ public class MySqlDatabase {
             e.printStackTrace();
         }
     }
+
+    public void setStatoCorriere(int idCorriere, Stato_Corriere statoCorriere) {
+        try {
+            PreparedStatement query = connection.
+                    prepareStatement("UPDATE c3.corrieri SET stato = ? WHERE id = ?");
+            query.setString(1, statoCorriere.name());
+            query.setInt(2,idCorriere);
+            int result = query.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -88,4 +88,9 @@ public class GestoreCorrieri {
         }
         return toReturn;
     }
+
+    public void setStatoCorriere(int idCorriere, Stato_Corriere statoCorriere) {
+        db.setStatoCorriere(idCorriere,statoCorriere);
+        corrieri = db.getAllCorrieri();
+    }
 }

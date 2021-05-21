@@ -18,6 +18,9 @@ public class ICorriere implements Initializable {
     private Button prelevaOrdineButton;
 
     @FXML
+    private Button modificaStatoButton;
+
+    @FXML
     private Button consegnaOrdineButton;
 
     @FXML
@@ -39,6 +42,20 @@ public class ICorriere implements Initializable {
         primaryStage.sizeToScene();
     }
 
+    @FXML
+    void modificaStatoClicked(ActionEvent event) {
+        Stage primaryStage = (Stage)prelevaOrdineButton.getScene().getWindow();
+        Parent root = null;
+        try{
+            root = FXMLLoader.load(getClass().getResource("/corriere/SelezionaStato.fxml"));
+        }catch (IOException e){
+            e.printStackTrace();
+            System.out.println("Impossibile aprire l'interfaccia del corriere");
+        }
+        primaryStage.getScene().setRoot(root);
+        primaryStage.sizeToScene();
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Cambia il colore del button on mouse hover.
@@ -46,5 +63,7 @@ public class ICorriere implements Initializable {
         prelevaOrdineButton.setOnMouseExited(e -> prelevaOrdineButton.setStyle("-fx-background-color: TRANSPARENT"));
         consegnaOrdineButton.setOnMouseEntered(e -> consegnaOrdineButton.setStyle("-fx-background-color: DARKGRAY"));
         consegnaOrdineButton.setOnMouseExited(e -> consegnaOrdineButton.setStyle("-fx-background-color: TRANSPARENT"));
+        modificaStatoButton.setOnMouseEntered(e -> modificaStatoButton.setStyle("-fx-background-color: DARKGRAY"));
+        modificaStatoButton.setOnMouseExited(e -> modificaStatoButton.setStyle("-fx-background-color: TRANSPARENT"));
     }
 }
