@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7fc1f5a-9379-45ca-a83e-7f5efb6510ac" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ProgettoC3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/negozio/SimpleNegozioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/negozio/SimpleNegozioTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/ordine/SimpleOrdineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/it/unicam/cs/ids/c3/ordine/SimpleOrdineTest.java" afterDir="false" />
@@ -26,7 +28,17 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ProgettoC3" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -80,7 +92,18 @@
       <recent name="it.unicam.cs.ids.c3.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MySqlDatabaseTest.MySqlDatabaseTest">
+  <component name="RunManager" selected="Gradle.Tests in 'it.unicam.cs.ids.c3'">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MySqlDatabaseTest.MySqlDatabaseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -123,33 +146,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SimpleImpiegatoTest.testEquals" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SimpleOrdineTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.impiegato.SimpleImpiegatoTest.testEquals&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":app:test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="SimpleImpiegatoTest.testHashCode" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.impiegato.SimpleImpiegatoTest.testHashCode&quot;" />
+        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.ordine.SimpleOrdineTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -186,13 +188,34 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Tests in 'it.unicam.cs.ids.c3'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;it.unicam.cs.ids.c3.*&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":app:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Tests in 'it.unicam.cs.ids.c3'" />
+        <item itemvalue="Gradle.SimpleOrdineTest" />
         <item itemvalue="Gradle.MySqlDatabaseTest.MySqlDatabaseTest" />
         <item itemvalue="Gradle.Tests in 'ProgettoC3.app.test'" />
         <item itemvalue="Gradle.SimpleImpiegatoTest" />
-        <item itemvalue="Gradle.SimpleImpiegatoTest.testEquals" />
-        <item itemvalue="Gradle.SimpleImpiegatoTest.testHashCode" />
       </list>
     </recent_temporary>
   </component>
@@ -224,6 +247,11 @@
       <workItem from="1621266796385" duration="6899000" />
       <workItem from="1621326838289" duration="5159000" />
       <workItem from="1621344034419" duration="725000" />
+      <workItem from="1621518728259" duration="582000" />
+      <workItem from="1621519355301" duration="47000" />
+      <workItem from="1621519414143" duration="195000" />
+      <workItem from="1621519719765" duration="7000" />
+      <workItem from="1621691890863" duration="919000" />
     </task>
     <servers />
   </component>

@@ -148,7 +148,6 @@ class SimpleOrdineTest {
         assertNotEquals(testNote.getNote(),"note");
     }
 
-    //TODO: test mancanti(getStatoOrdine, setStatoOrdine)
     @Test
     void testGetStatoOrdine() {
         SimpleOrdine testStatoOrdine =

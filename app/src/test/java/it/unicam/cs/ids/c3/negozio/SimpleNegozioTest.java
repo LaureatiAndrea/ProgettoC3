@@ -14,7 +14,8 @@ class SimpleNegozioTest {
     @Test
     void testGetId() {
         SimpleNegozio testIdnegozio =
-                new SimpleNegozio(1, "Negozio X", "Via cardo 22", Categoria_Merceologica.ALIMENTARI);
+                new SimpleNegozio(1, "Negozio X",
+                           "Via cardo 22", Categoria_Merceologica.ALIMENTARI, 3);
 
         assertEquals(testIdnegozio.getId(),1);
         assertNotEquals(testIdnegozio.getId(),2);
@@ -23,7 +24,8 @@ class SimpleNegozioTest {
     @Test
     void testSetId() {
         SimpleNegozio testIdNegozio =
-                new SimpleNegozio(2, "BelNegozio", "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO);
+                new SimpleNegozio(2, "BelNegozio",
+                           "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO, 4);
 
         testIdNegozio.setId(3);
         assertEquals(testIdNegozio.getId(),3);
@@ -33,7 +35,8 @@ class SimpleNegozioTest {
     @Test
     void testGetNome() {
         SimpleNegozio testNomenegozio =
-                new SimpleNegozio(1, "TIRRENO", "Via cardo 22", Categoria_Merceologica.ALIMENTARI);
+                new SimpleNegozio(1, "TIRRENO",
+                           "Via cardo 22", Categoria_Merceologica.ALIMENTARI, 3);
 
         assertEquals(testNomenegozio.getNome(),"TIRRENO");
         assertNotEquals(testNomenegozio.getNome(),"Tirreno");
@@ -42,7 +45,8 @@ class SimpleNegozioTest {
     @Test
     void testSetNome() {
         SimpleNegozio testNomeNegozio =
-                new SimpleNegozio(2, "BelNegozio", "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO);
+                new SimpleNegozio(2, "BelNegozio",
+                           "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO,4);
 
         testNomeNegozio.setNome("Pippo");
         assertEquals("Pippo",testNomeNegozio.getNome());
@@ -51,7 +55,8 @@ class SimpleNegozioTest {
     @Test
     void testGetIndirizzo() {
         SimpleNegozio testIndirizzoNegozio =
-                new SimpleNegozio(1, "TIRRENO", "Via cardo 22", Categoria_Merceologica.ALIMENTARI);
+                new SimpleNegozio(1, "TIRRENO",
+                           "Via cardo 22", Categoria_Merceologica.ALIMENTARI,5);
 
         assertEquals( testIndirizzoNegozio.getIndirizzo(),"Via cardo 22");
         assertNotEquals(testIndirizzoNegozio.getIndirizzo(),"Via cardo 2");
@@ -60,7 +65,8 @@ class SimpleNegozioTest {
     @Test
     void testSetIndirizzo() {
         SimpleNegozio testIndirizzoNegozio =
-                new SimpleNegozio(2, "BelNegozio", "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO);
+                new SimpleNegozio(2, "BelNegozio",
+                           "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO,4);
 
         testIndirizzoNegozio.setIndirizzo("Paperopoli");
         assertEquals(testIndirizzoNegozio.getIndirizzo(),"Paperopoli");
@@ -70,7 +76,8 @@ class SimpleNegozioTest {
     @Test
     void testGetCategoria() {
         SimpleNegozio testCategoriaNegozio =
-                new SimpleNegozio(1, "TIRRENO", "Via cardo 22", Categoria_Merceologica.ALIMENTARI);
+                new SimpleNegozio(1, "TIRRENO",
+                           "Via cardo 22", Categoria_Merceologica.ALIMENTARI,3);
 
         assertEquals(testCategoriaNegozio.getCategoria(), Categoria_Merceologica.ALIMENTARI);
     }
@@ -78,7 +85,8 @@ class SimpleNegozioTest {
     @Test
     void testSetCategoria() {
         SimpleNegozio testCategoriaNegozio =
-                new SimpleNegozio(1, "TIRRENO", "Via cardo 22", Categoria_Merceologica.ALIMENTARI);
+                new SimpleNegozio(1, "TIRRENO",
+                           "Via cardo 22", Categoria_Merceologica.ALIMENTARI,3);
 
         testCategoriaNegozio.setCategoria(Categoria_Merceologica.ELETTRONICA);
         assertEquals(testCategoriaNegozio.getCategoria(), Categoria_Merceologica.ELETTRONICA);
@@ -88,7 +96,8 @@ class SimpleNegozioTest {
     @Test
     void getPromozioni() {
         SimpleNegozio testPromozioniNegozio =
-                new SimpleNegozio(2, "BelNegozio", "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO);
+                new SimpleNegozio(2, "BelNegozio",
+                           "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO,4);
         ArrayList<Promozione> promozioni = new ArrayList<>();
         Promozione p1 = new Promozione(1,20.00);
         Promozione p2 = new Promozione(2,10.50);
@@ -107,7 +116,8 @@ class SimpleNegozioTest {
     @Test
     void lanciaPromozione() {
         SimpleNegozio testLanciaPromozione =
-                new SimpleNegozio(1, "TIRRENO", "Via cardo 22", Categoria_Merceologica.ALIMENTARI);
+                new SimpleNegozio(1, "TIRRENO",
+                           "Via cardo 22", Categoria_Merceologica.ALIMENTARI,3);
         Promozione p1 = new Promozione(1,20.00);
         p1.setStatoPromozione(false);
 
@@ -120,7 +130,8 @@ class SimpleNegozioTest {
     @Test
     void terminaPromozione() {
         SimpleNegozio testTerminaPromozione =
-                new SimpleNegozio(1, "TIRRENO", "Via cardo 22", Categoria_Merceologica.ALIMENTARI);
+                new SimpleNegozio(1, "TIRRENO",
+                           "Via cardo 22", Categoria_Merceologica.ALIMENTARI,3);
         Promozione p2 = new Promozione(2,10.50);
 
         testTerminaPromozione.addPromozione(p2);
@@ -132,7 +143,8 @@ class SimpleNegozioTest {
     @Test
     void getPromozione() {
         SimpleNegozio testPromozione =
-                new SimpleNegozio(2, "BelNegozio", "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO);
+                new SimpleNegozio(2, "BelNegozio",
+                           "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO,4);
         Promozione p3 = new Promozione(3,15.50);
 
         testPromozione.addPromozione(p3);
@@ -143,7 +155,8 @@ class SimpleNegozioTest {
     @Test
     void addPromozione() {
         SimpleNegozio testAddPromozione =
-                new SimpleNegozio(1, "TIRRENO", "Via cardo 22", Categoria_Merceologica.ALIMENTARI);
+                new SimpleNegozio(1, "TIRRENO",
+                           "Via cardo 22", Categoria_Merceologica.ALIMENTARI,3);
         Promozione p3 = new Promozione(3,15.50);
 
         testAddPromozione.addPromozione(p3);
@@ -155,7 +168,8 @@ class SimpleNegozioTest {
     @Test
     void removePromozione() {
         SimpleNegozio testRemovePromozione =
-                new SimpleNegozio(2, "BelNegozio", "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO);
+                new SimpleNegozio(2, "BelNegozio",
+                           "Via Milano 5", Categoria_Merceologica.ABBIGLIAMENTO,4);
         Promozione p1 = new Promozione(1,20.00);
 
         testRemovePromozione.addPromozione(p1);
