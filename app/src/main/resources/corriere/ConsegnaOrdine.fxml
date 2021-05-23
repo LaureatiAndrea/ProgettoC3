@@ -7,23 +7,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.corriere.PrelevaOrdineController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.corriere.ConsegnaOrdineController">
    <children>
-      <Label layoutX="321.0" layoutY="33.0" text="PRELEVA ORDINE">
+      <Label layoutX="321.0" layoutY="33.0" text="CONSEGNA ORDINE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="59.0" text="Ordini da ritirare presso i negozi :" />
+      <Label layoutX="14.0" layoutY="59.0" text="Ordini prelevati, da consegnare: " />
       <TableView fx:id="tableView" layoutX="14.0" layoutY="86.0" prefHeight="279.0" prefWidth="726.0">
-        <columns>
-          <TableColumn fx:id="negozioColumn" prefWidth="116.0" text="Negozio" />
-          <TableColumn fx:id="ritiraPressoColumn" prefWidth="203.0" text="Ritira Presso" />
+         <columns>
+            <TableColumn fx:id="negozioColumn" prefWidth="116.0" text="Negozio" />
+            <TableColumn fx:id="ritiratoPressoColumn" prefWidth="203.0" text="Ritirato Presso" />
             <TableColumn fx:id="destinazioneColumn" prefWidth="203.0" text="Destinazione" />
             <TableColumn fx:id="noteColumn" prefWidth="203.0" text="Note" />
-        </columns>
+         </columns>
       </TableView>
-      <Button fx:id="confermaButton" layoutX="600.0" layoutY="377.0" mnemonicParsing="false" onAction="#confermaButtonPressed" prefHeight="42.0" prefWidth="140.0" text="Preleva selezionato" />
+      <Button fx:id="confermaButton" layoutX="600.0" layoutY="377.0" mnemonicParsing="false" onAction="#confermaButtonPressed" prefHeight="42.0" prefWidth="140.0" text="Consegna selezionato" />
       <Button fx:id="annullaButton" layoutX="14.0" layoutY="377.0" mnemonicParsing="false" onAction="#annullaButtonPressed" prefHeight="42.0" prefWidth="140.0" text="Annulla" />
    </children>
 </Pane>

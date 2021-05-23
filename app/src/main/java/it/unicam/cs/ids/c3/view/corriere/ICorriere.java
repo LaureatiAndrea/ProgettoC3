@@ -25,7 +25,16 @@ public class ICorriere implements Initializable {
 
     @FXML
     void consegnaOrdine(ActionEvent event) {
-
+        Stage primaryStage = (Stage)prelevaOrdineButton.getScene().getWindow();
+        Parent root = null;
+        try{
+            root = FXMLLoader.load(getClass().getResource("/corriere/ConsegnaOrdine.fxml"));
+        }catch (IOException e){
+            e.printStackTrace();
+            System.out.println("Impossibile aprire l'interfaccia del corriere");
+        }
+        primaryStage.getScene().setRoot(root);
+        primaryStage.sizeToScene();
     }
 
     @FXML

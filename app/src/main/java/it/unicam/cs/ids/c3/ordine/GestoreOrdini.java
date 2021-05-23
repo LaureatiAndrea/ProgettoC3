@@ -116,4 +116,14 @@ public class GestoreOrdini {
         //TODO : Aggiorna la lista con i valori del database
         this.ordini = db.getAllOrdini();
     }
+
+    public ArrayList<Ordine> getOrdiniInViaggio() {
+        ArrayList<Ordine> toReturn = new ArrayList<>();
+        for(Ordine o : this.ordini){
+            if(o.getStatoOrdine().equals(Stato_Ordine.TRASPORTO_IN_CORSO)){
+                toReturn.add(o);
+            }
+        }
+        return toReturn;
+    }
 }

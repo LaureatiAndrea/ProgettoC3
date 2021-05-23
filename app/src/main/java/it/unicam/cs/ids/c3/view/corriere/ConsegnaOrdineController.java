@@ -21,11 +21,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PrelevaOrdineController implements Initializable {
+public class ConsegnaOrdineController implements Initializable {
 
     private GestoreOrdini gestoreOrdini = GestoreOrdini.getInstance();
-    private GestoreMagazzini gestoreMagazzini = GestoreMagazzini.getInstance();
     private GestoreNegozi gestoreNegozi = GestoreNegozi.getInstance();
+    private GestoreMagazzini gestoreMagazzini = GestoreMagazzini.getInstance();
+
 
     @FXML
     private TableView<Ordine> tableView;
@@ -34,7 +35,7 @@ public class PrelevaOrdineController implements Initializable {
     private TableColumn<Ordine, String> negozioColumn;
 
     @FXML
-    private TableColumn<Ordine, String> ritiraPressoColumn;
+    private TableColumn<Ordine, String> ritiratoPressoColumn;
 
     @FXML
     private TableColumn<Ordine, String> destinazioneColumn;
@@ -51,11 +52,11 @@ public class PrelevaOrdineController implements Initializable {
     @FXML
     void annullaButtonPressed(ActionEvent event) {
         //Deve annullare il processo di prelevamento dell'ordine
-        Stage primaryStage = (Stage)confermaButton.getScene().getWindow();
+        Stage primaryStage = (Stage) confermaButton.getScene().getWindow();
         Parent root = null;
-        try{
+        try {
             root = FXMLLoader.load(getClass().getResource("/corriere/InterfacciaCorriere.fxml"));
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Impossibile aprire l'interfaccia del corriere");
         }
@@ -65,9 +66,15 @@ public class PrelevaOrdineController implements Initializable {
 
     @FXML
     void confermaButtonPressed(ActionEvent event) {
-        //Deve settare lo stato dell'ordine selezionato come TRASPORTO IN CORSO
+        /*Deve settare lo stato dell'ordine selezionato come CONSEGNATO AL CLIENTE nel caso di consegna a domicilio,
+        *Deve settare lo stato dell'ordine selezionato come  DEPOSITATO IN MAGAZZINO nel caso di consegna presso magazzino
+        */
         int idOrdine = tableView.getSelectionModel().getSelectedItem().getID();
-        gestoreOrdini.setStatoOrdine(idOrdine, Stato_Ordine.TRASPORTO_IN_CORSO);
+        if(tableView.getSelectionModel().getSelectedItem().getIdMagazzino()==-1){
+            gestoreOrdini.setStatoOrdine(idOrdine,Stato_Ordine.CONSEGNATO_AL_CLIENTE);
+        }else {
+            gestoreOrdini.setStatoOrdine(idOrdine, Stato_Ordine.DEPOSITATO_IN_MAGAZZINO);
+        }
         gestoreOrdini.updateList();
         tableView.getItems().remove(tableView.getSelectionModel().getSelectedItem());
     }
@@ -75,19 +82,19 @@ public class PrelevaOrdineController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //Setta la tabella per ospitare ordini
-        //TODO : Deve visualizzare solo gli ordini ancora da prelevare ( OK FATTO )
-        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInNegozio()));
+        //TODO : Deve visualizzare solo gli ordini prelevati ( OK FATTO )
+        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInViaggio()));
         //Colonna destinazione ( Indirizzo di consegna )
         destinazioneColumn.setCellValueFactory(cella -> {
-            if(cella.getValue().getDestinazione()!=null) return new SimpleStringProperty("Residenza : "
+            if (cella.getValue().getDestinazione() != null) return new SimpleStringProperty("Residenza : "
                     + cella.getValue().getDestinazione());
-            else{
+            else {
                 return new SimpleStringProperty("Magazzino : "
                         + gestoreMagazzini.getMagazzino(cella.getValue().getIdMagazzino()).getIndirizzo());
             }
         });
-        //Colonna Ritira Presso ( Indirizzo negozio )
-        ritiraPressoColumn.setCellValueFactory(cella -> {
+        //Colonna Ritirato Presso ( Indirizzo negozio )
+        ritiratoPressoColumn.setCellValueFactory(cella -> {
             return new SimpleStringProperty(gestoreNegozi.getNegozio(cella.getValue().getIdNegozio()).getIndirizzo());
         });
         //Colonna negozio ( Nome negozio )
@@ -100,3 +107,4 @@ public class PrelevaOrdineController implements Initializable {
         });
     }
 }
+
