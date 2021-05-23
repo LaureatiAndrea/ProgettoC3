@@ -24,6 +24,9 @@ public class ICorriere implements Initializable {
     private Button consegnaOrdineButton;
 
     @FXML
+    private Button visualizzaTuttiGliOrdiniButton;
+
+    @FXML
     void consegnaOrdine(ActionEvent event) {
         Stage primaryStage = (Stage)prelevaOrdineButton.getScene().getWindow();
         Parent root = null;
@@ -65,6 +68,20 @@ public class ICorriere implements Initializable {
         primaryStage.sizeToScene();
     }
 
+    @FXML
+    void visualizzaTuttiGliOrdiniButtonPressed(ActionEvent event) {
+        Stage primaryStage = (Stage)prelevaOrdineButton.getScene().getWindow();
+        Parent root = null;
+        try{
+            root = FXMLLoader.load(getClass().getResource("/corriere/VisualizzaOrdini.fxml"));
+        }catch (IOException e){
+            e.printStackTrace();
+            System.out.println("Impossibile aprire l'interfaccia del corriere");
+        }
+        primaryStage.getScene().setRoot(root);
+        primaryStage.sizeToScene();
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Cambia il colore del button on mouse hover.
@@ -74,5 +91,7 @@ public class ICorriere implements Initializable {
         consegnaOrdineButton.setOnMouseExited(e -> consegnaOrdineButton.setStyle("-fx-background-color: TRANSPARENT"));
         modificaStatoButton.setOnMouseEntered(e -> modificaStatoButton.setStyle("-fx-background-color: DARKGRAY"));
         modificaStatoButton.setOnMouseExited(e -> modificaStatoButton.setStyle("-fx-background-color: TRANSPARENT"));
+        visualizzaTuttiGliOrdiniButton.setOnMouseEntered(e -> visualizzaTuttiGliOrdiniButton.setStyle("-fx-background-color: DARKGRAY"));
+        visualizzaTuttiGliOrdiniButton.setOnMouseExited(e -> visualizzaTuttiGliOrdiniButton.setStyle("-fx-background-color: TRANSPARENT"));
     }
 }

@@ -27,5 +27,10 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <Button fx:id="visualizzaTuttiGliOrdiniButton" layoutY="303.0" mnemonicParsing="false" onAction="#visualizzaTuttiGliOrdiniButtonPressed" prefHeight="63.0" prefWidth="350.0" style="-fx-background-color: none;" text="Visualizza tutti gli ordini">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

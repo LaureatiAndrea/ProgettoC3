@@ -126,4 +126,24 @@ public class GestoreOrdini {
         }
         return toReturn;
     }
+
+    public ArrayList<Ordine> getOrdiniConsegnati() {
+        ArrayList<Ordine> toReturn = new ArrayList<>();
+        for(Ordine o : this.ordini){
+            if(o.getStatoOrdine()==Stato_Ordine.CONSEGNATO_AL_CLIENTE){
+                toReturn.add(o);
+            }
+        }
+        return toReturn;
+    }
+
+    public ArrayList<Ordine> getOrdiniDepositati() {
+        ArrayList<Ordine> toReturn = new ArrayList<>();
+        for(Ordine o : this.ordini){
+            if(o.getStatoOrdine()==Stato_Ordine.DEPOSITATO_IN_MAGAZZINO){
+                toReturn.add(o);
+            }
+        }
+        return toReturn;
+    }
 }

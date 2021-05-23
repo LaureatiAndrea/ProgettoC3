@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="758.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.corriere.VisualizzaOrdiniController">
+   <children>
+      <Label layoutX="310.0" layoutY="22.0" text="VISUALIZZA ORDINI">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="86.0" prefHeight="279.0" prefWidth="726.0">
+         <columns>
+            <TableColumn fx:id="negozioColumn" prefWidth="119.0" text="Negozio" />
+            <TableColumn fx:id="ritiraPressoColumn" prefWidth="182.0" text="Ritira Presso" />
+            <TableColumn fx:id="destinazioneColumn" prefWidth="173.0" text="Destinazione" />
+            <TableColumn fx:id="noteColumn" prefWidth="154.0" text="Note" />
+            <TableColumn fx:id="codiceColumn" prefWidth="97.0" text="Codice" />
+         </columns>
+      </TableView>
+      <Button fx:id="indietroButton" layoutX="14.0" layoutY="377.0" mnemonicParsing="false" onAction="#annullaButtonPressed" prefHeight="42.0" prefWidth="140.0" text="Indietro" />
+      <RadioButton fx:id="daRitirareRadioButton" layoutX="14.0" layoutY="61.0" mnemonicParsing="false" onAction="#daRitirareRadioButtonPressed" text="Da ritirare" />
+      <RadioButton fx:id="trasportoInCorsoRadioButton" layoutX="154.0" layoutY="61.0" mnemonicParsing="false" onAction="#trasportoInCorsoRadioButtonPressed" text="Trasporto in corso" />
+      <RadioButton fx:id="depositatoInMagazzinoRadioButton" layoutX="367.0" layoutY="61.0" mnemonicParsing="false" onAction="#depositatoInMagazzinoRadioButtonPressed" text="Depositato in magazzino" />
+      <RadioButton fx:id="consegnatoAlClienteRadioButton" layoutX="602.0" layoutY="61.0" mnemonicParsing="false" onAction="#consegnatoAlClienteRadioButtonPressed" text="Consegnato al cliente" />
+   </children>
+</Pane>
