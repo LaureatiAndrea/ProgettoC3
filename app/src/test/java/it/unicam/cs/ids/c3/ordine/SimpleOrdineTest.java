@@ -12,7 +12,8 @@ class SimpleOrdineTest {
     @Test
     void testGetIdOrdine() {
         SimpleOrdine testIdOrdine =
-                new SimpleOrdine(1,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(1,1,3,
+                                "destinazione",4,2,"note");
 
         assertEquals(testIdOrdine.getID(),1);
     }
@@ -20,7 +21,8 @@ class SimpleOrdineTest {
     @Test
     void testSetIdOrdine() {
         SimpleOrdine testIdOrdine =
-                new SimpleOrdine(2,5,7,"casa",8,6,"postit");
+                new SimpleOrdine(2,5,7,
+                                "casa",8,6,"postit");
 
         testIdOrdine.setId(63);
 
@@ -31,7 +33,8 @@ class SimpleOrdineTest {
     @Test
     void testGetIdCliente() {
         SimpleOrdine testIdCliente =
-                new SimpleOrdine(1,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(1,1,3,
+                                "destinazione",4,2,"note");
 
         assertEquals(testIdCliente.getIdCliente(),1);
         assertNotEquals(testIdCliente.getIdCliente(),3);
@@ -40,7 +43,8 @@ class SimpleOrdineTest {
     @Test
     void testSetIdCliente() {
         SimpleOrdine testIdCliente =
-                new SimpleOrdine(1,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(1,1,3,
+                                "destinazione",4,2,"note");
 
         testIdCliente.setIdCliente(11);
 
@@ -51,7 +55,8 @@ class SimpleOrdineTest {
     @Test
     void testGetIdCorriere() {
         SimpleOrdine testIdCorriere =
-                new SimpleOrdine(2,5,7,"casa",8,6,"postit");
+                new SimpleOrdine(2,5,7,
+                                "casa",8,6,"postit");
 
         assertEquals(testIdCorriere.getIdCorriere(),7);
         assertNotEquals(testIdCorriere.getIdCorriere(),5);
@@ -60,7 +65,8 @@ class SimpleOrdineTest {
     @Test
     void testSetIdCorriere() {
         SimpleOrdine testIdCorriere =
-                new SimpleOrdine(2,5,7,"casa",8,6,"postit");
+                new SimpleOrdine(2,5,7,
+                                "casa",8,6,"postit");
 
         testIdCorriere.setIdCorriere(17);
 
@@ -71,7 +77,8 @@ class SimpleOrdineTest {
     @Test
     void testGetDestinazione() {
         SimpleOrdine testDestinazione =
-                new SimpleOrdine(1,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(1,1,3,
+                                "destinazione",4,2,"note");
 
         assertEquals(testDestinazione.getDestinazione(),"destinazione");
         assertNotEquals(testDestinazione.getDestinazione(),"ultima");
@@ -80,7 +87,8 @@ class SimpleOrdineTest {
     @Test
     void testSetDestinazione() {
         SimpleOrdine testDestinazione =
-                new SimpleOrdine(1,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(1,1,3,
+                                "destinazione",4,2,"note");
 
         testDestinazione.setDestinazione("ultima");
 
@@ -91,7 +99,8 @@ class SimpleOrdineTest {
     @Test
     void testGetIdMagazzino() {
         SimpleOrdine testIdMagazzino =
-                new SimpleOrdine(2,5,7,"casa",8,6,"postit");
+                new SimpleOrdine(2,5,7,
+                                "casa",8,6,"postit");
 
         assertEquals(testIdMagazzino.getIdMagazzino(),8);
         assertNotEquals(testIdMagazzino.getIdCorriere(),5);
@@ -100,7 +109,8 @@ class SimpleOrdineTest {
     @Test
     void testSetIdMagazzino() {
         SimpleOrdine testIdMagazzino =
-                new SimpleOrdine(2,5,7,"casa",8,6,"postit");
+                new SimpleOrdine(2,5,7,
+                                "casa",8,6,"postit");
 
         testIdMagazzino.setIdMagazzino(17);
 
@@ -111,7 +121,8 @@ class SimpleOrdineTest {
     @Test
     void testGetIdNegozio() {
         SimpleOrdine testIdNegozio =
-                new SimpleOrdine(2,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(2,1,3,
+                                "destinazione",4,2,"note");
 
         assertEquals(testIdNegozio.getIdNegozio(),2);
         assertNotEquals(testIdNegozio.getIdNegozio(),1);
@@ -120,7 +131,8 @@ class SimpleOrdineTest {
     @Test
     void testSetIdNegozio() {
         SimpleOrdine testIdNegozio =
-                new SimpleOrdine(2,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(2,1,3,
+                                "destinazione",4,2,"note");
 
         testIdNegozio.setIdNegozio(12);
 
@@ -131,7 +143,8 @@ class SimpleOrdineTest {
     @Test
     void testGetNote() {
         SimpleOrdine testNote =
-                new SimpleOrdine(1,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(1,1,3,
+                                "destinazione",4,2,"note");
 
         assertEquals(testNote.getNote(),"note");
         assertNotEquals(testNote.getNote(),"destinazione");
@@ -140,7 +153,8 @@ class SimpleOrdineTest {
     @Test
     void testSetNote() {
         SimpleOrdine testNote =
-                new SimpleOrdine(1,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(1,1,3,
+                                "destinazione",4,2,"note");
 
         testNote.setNote("corri");
 
@@ -151,7 +165,8 @@ class SimpleOrdineTest {
     @Test
     void testGetStatoOrdine() {
         SimpleOrdine testStatoOrdine =
-                new SimpleOrdine(2,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(2,1,3,
+                                "destinazione",4,2,"note");
 
         testStatoOrdine.setStatoOrdine(Stato_Ordine.IN_NEGOZIO);
 
@@ -161,11 +176,12 @@ class SimpleOrdineTest {
     @Test
     void testSetStatoOrdine() {
         SimpleOrdine testStatoOrdine =
-                new SimpleOrdine(2,1,3,"destinazione",4,2,"note");
+                new SimpleOrdine(2,1,3,
+                                "destinazione",4,2,"note");
 
-        testStatoOrdine.setStatoOrdine(Stato_Ordine.DEPOSITATO);
+        testStatoOrdine.setStatoOrdine(Stato_Ordine.DEPOSITATO_IN_MAGAZZINO);
 
-        assertEquals(testStatoOrdine.getStatoOrdine(), Stato_Ordine.DEPOSITATO);
+        assertEquals(testStatoOrdine.getStatoOrdine(), Stato_Ordine.DEPOSITATO_IN_MAGAZZINO);
         assertNotEquals(testStatoOrdine.getStatoOrdine(), Stato_Ordine.IN_NEGOZIO);
     }
 
