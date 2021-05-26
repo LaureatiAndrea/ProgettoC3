@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.C3View">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="344.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.C3View">
    <children>
       <Label layoutX="103.0" layoutY="32.0" text="C3 APPLICATION">
          <font>
@@ -18,6 +18,11 @@
          </font>
       </Button>
       <Button fx:id="corriereButton" layoutY="177.0" mnemonicParsing="false" onAction="#apriMenuCorriere" prefHeight="63.0" prefWidth="350.0" style="-fx-background-color: none;" text="CORRIERE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="clienteButton" layoutY="240.0" mnemonicParsing="false" onAction="#clienteButtonClicked" prefHeight="63.0" prefWidth="350.0" style="-fx-background-color: none;" text="CLIENTE">
          <font>
             <Font size="14.0" />
          </font>

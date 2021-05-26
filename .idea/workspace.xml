@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7fc1f5a-9379-45ca-a83e-7f5efb6510ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/C3View.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/C3View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/C3Application.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/C3Application.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,10 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/it/unicam/cs/ids/c3/view/impiegato" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/ProgettoC3.iml" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -248,6 +252,12 @@
       <workItem from="1621519414143" duration="195000" />
       <workItem from="1621519719765" duration="7000" />
       <workItem from="1621691890863" duration="2508000" />
+      <workItem from="1621869190462" duration="24000" />
+      <workItem from="1621869233546" duration="4000" />
+      <workItem from="1621869519321" duration="1009000" />
+      <workItem from="1621937026596" duration="4855000" />
+      <workItem from="1621947864129" duration="1986000" />
+      <workItem from="1622020942867" duration="338000" />
     </task>
     <servers />
   </component>

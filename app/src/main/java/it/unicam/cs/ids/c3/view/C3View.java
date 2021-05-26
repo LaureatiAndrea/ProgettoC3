@@ -20,12 +20,17 @@ public class C3View implements Initializable {
     @FXML
     private Button corriereButton;
 
+    @FXML
+    private Button clienteButton;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //Quando si passa il mouse sopra al bottone, cambia colore.
         impiegatoButton.setOnMouseEntered(e -> impiegatoButton.setStyle("-fx-background-color: DARKGRAY"));
         corriereButton.setOnMouseEntered(e -> corriereButton.setStyle("-fx-background-color: DARKGRAY"));
+        clienteButton.setOnMouseEntered(e -> clienteButton.setStyle("-fx-background-color: DARKGRAY"));
+        clienteButton.setOnMouseExited(e -> clienteButton.setStyle("-fx-background-color: TRANSPARENT"));
         impiegatoButton.setOnMouseExited(e -> impiegatoButton.setStyle("-fx-background-color: TRANSPARENT"));
         corriereButton.setOnMouseExited(e -> corriereButton.setStyle("-fx-background-color: TRANSPARENT"));
     }
@@ -59,5 +64,18 @@ public class C3View implements Initializable {
         primaryStage.sizeToScene();
     }
 
+    @FXML
+    void clienteButtonClicked(ActionEvent event) {
+        Stage primaryStage = (Stage)impiegatoButton.getScene().getWindow();
+        Parent root = null;
+        try{
+            root = FXMLLoader.load(getClass().getResource("/impiegato/InterfacciaCliente.fxml"));
+        }catch (IOException e){
+            e.printStackTrace();
+            System.out.println("Impossibile aprire l'interfaccia dell'Impiegato");
+        }
+        primaryStage.getScene().setRoot(root);
+        primaryStage.sizeToScene();
+    }
 }
 
