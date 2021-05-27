@@ -59,11 +59,6 @@ public class VisualizzaNegoziController implements Initializable {
     }
 
     @FXML
-    void filtraCategoriaChoiceBoxClicked(ActionEvent event){
-
-    }
-
-    @FXML
     void filtraButtonPressed(ActionEvent event) {
         //Filtra i negozi nella tabella in accordo con la categoria selezionata nella choicebox
         tableView.setItems(FXCollections.observableArrayList(gestoreNegozi.getNegoziByCategoria(filtraCategoriaChoiceBox.getSelectionModel().getSelectedItem())));

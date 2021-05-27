@@ -89,6 +89,11 @@ public class GestoreCorrieri {
         return toReturn;
     }
 
+    /**
+     * Modifica lo stato di disponibilita di un determinato corriere presente all'interno del gestore
+     * @param idCorriere l'id del corriere di cui si vuole modificare la disponibilita
+     * @param statoCorriere il nuovo stato di disponibilita del corriere
+     */
     public void setStatoCorriere(int idCorriere, Stato_Corriere statoCorriere) {
         db.setStatoCorriere(idCorriere,statoCorriere);
         corrieri = db.getAllCorrieri();

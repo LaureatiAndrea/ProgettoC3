@@ -94,6 +94,10 @@ public class MySqlDatabase {
         return toReturn;
     }
 
+    /**
+     * Restituisce la lista dei magazzini presenti sul DB
+     * @return la lista dei magazzini
+     */
     public ArrayList<Magazzino> getAllMagazzini() {
         ArrayList<Magazzino> toReturn = new ArrayList<>();
         try {
@@ -110,6 +114,10 @@ public class MySqlDatabase {
         return toReturn;
     }
 
+    /**
+     * Restituisce la lista dei corrieri presenti sul DB
+     * @return la lista dei corrieri
+     */
     public ArrayList<Corriere> getAllCorrieri() {
         ArrayList<Corriere> toReturn = new ArrayList<>();
         try {
@@ -125,6 +133,10 @@ public class MySqlDatabase {
         return toReturn;
     }
 
+    /**
+     * Restituisce la lista degli ordini presenti sul DB
+     * @return la lista degli ordini
+     */
     public ArrayList<Ordine> getAllOrdini() {
         ArrayList<Ordine> toReturn = new ArrayList<>();
         try {
@@ -147,6 +159,10 @@ public class MySqlDatabase {
         return toReturn;
     }
 
+    /**
+     * Effettua la INSERT di un nuovo ordine sul DB
+     * @param toAdd l'ordine da inserire
+     */
     public void addOrdine(Ordine toAdd) {
         try {
             PreparedStatement query = connection.
@@ -169,6 +185,10 @@ public class MySqlDatabase {
         }
     }
 
+    /**
+     * Restituisce tutti i negozi presenti sul DB
+     * @return la lista dei negozi
+     */
     public ArrayList<Negozio> getAllNegozi() {
         ArrayList<Negozio> toReturn = new ArrayList<>();
         try {
@@ -194,11 +214,16 @@ public class MySqlDatabase {
         return toReturn;
     }
 
-    public void setStatoOrdine(int idOrdine, String name) {
+    /**
+     * Modifica lo stato di un particolare ordine presente sul DB
+     * @param idOrdine l'id dell'ordine da modificare
+     * @param stato lo stato dell'ordine
+     */
+    public void setStatoOrdine(int idOrdine, String stato) {
         try {
             PreparedStatement query = connection.
                     prepareStatement("UPDATE c3.ordini SET statoOrdine = ? WHERE id = ?");
-            query.setString(1, name);
+            query.setString(1, stato);
             query.setInt(2,idOrdine);
             int result = query.executeUpdate();
         } catch (SQLException e) {
@@ -206,6 +231,11 @@ public class MySqlDatabase {
         }
     }
 
+    /**
+     * Modifica la disponibilitá di un corriere presente sul DB
+     * @param idCorriere l'id del corriere da modificare
+     * @param statoCorriere il nuovo stato del corriere
+     */
     public void setStatoCorriere(int idCorriere, Stato_Corriere statoCorriere) {
         try {
             PreparedStatement query = connection.

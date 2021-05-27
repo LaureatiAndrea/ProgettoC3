@@ -30,9 +30,12 @@ public class GestoreNegozi {
     public GestoreNegozi(){
         db = MySqlDatabase.getInstance();
         negozi = db.getAllNegozi();
-        System.out.println(this.negozi);
     }
 
+    /**
+     * Ritorna tutti i negozi contenuti nel gestore
+     * @return ArrayList di tutti i negozi contenuti nel gestore.
+     */
     public ArrayList<Negozio> getNegozi() {
         return this.negozi;
     }
@@ -71,6 +74,10 @@ public class GestoreNegozi {
         }
     }
 
+    /**
+     * Ritorna la lista delle categorie vendute dai vari negozi, come stringhe
+     * @return la lista delle categorie come arraylist di stringhe
+     */
     public ArrayList<String> getCategorieAsStrings() {
         ArrayList<String> toReturn = new ArrayList<>();
         for(Negozio n : this.negozi){
@@ -81,6 +88,11 @@ public class GestoreNegozi {
         return toReturn;
     }
 
+    /**
+     * Ritorna tutti i negozi che vendono una determinata categoria merceologica
+     * @param categoria la categoria in base alla quale si vogliono filtrare i negozi
+     * @return i negozi che vendono quella categoria merceologica
+     */
     public ArrayList<Negozio> getNegoziByCategoria(String categoria) {
         Categoria_Merceologica cat = Categoria_Merceologica.valueOf(categoria);
         ArrayList<Negozio> toReturn = new ArrayList<>();

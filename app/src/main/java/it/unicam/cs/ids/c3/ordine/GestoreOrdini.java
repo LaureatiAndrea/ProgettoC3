@@ -108,15 +108,27 @@ public class GestoreOrdini {
         return toReturn;
     }
 
+    /**
+     * Setta lo stato di un particolare ordine
+     * @param idOrdine l'id dell'ordine da modificare
+     * @param statoOrdine il nuovo stato dell'ordine
+     */
     public void setStatoOrdine(int idOrdine, Stato_Ordine statoOrdine) {
         db.setStatoOrdine(idOrdine, statoOrdine.name());
     }
 
+    /**
+     * aggiorna la lista con i valori presenti nel database.
+     */
     public void updateList() {
         //TODO : Aggiorna la lista con i valori del database
         this.ordini = db.getAllOrdini();
     }
 
+    /**
+     * Restituisce soltanto gli ordini che abbiano lo stato IN_VIAGGIO
+     * @return la lista degli ordini
+     */
     public ArrayList<Ordine> getOrdiniInViaggio() {
         ArrayList<Ordine> toReturn = new ArrayList<>();
         for(Ordine o : this.ordini){
@@ -127,6 +139,10 @@ public class GestoreOrdini {
         return toReturn;
     }
 
+    /**
+     * Restituisce soltanto gli ordini che abbiano lo stato CONSEGNATO_AL_CLIENTE
+     * @return la lista degli ordini
+     */
     public ArrayList<Ordine> getOrdiniConsegnati() {
         ArrayList<Ordine> toReturn = new ArrayList<>();
         for(Ordine o : this.ordini){
@@ -137,6 +153,10 @@ public class GestoreOrdini {
         return toReturn;
     }
 
+    /**
+     * Restituisce la lista degli ordini con stato DEPOSITATO_IN_MAGAZZINO
+     * @return la lista degli ordini
+     */
     public ArrayList<Ordine> getOrdiniDepositati() {
         ArrayList<Ordine> toReturn = new ArrayList<>();
         for(Ordine o : this.ordini){
