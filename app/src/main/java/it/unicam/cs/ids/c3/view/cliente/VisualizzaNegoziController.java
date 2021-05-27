@@ -35,7 +35,7 @@ public class VisualizzaNegoziController implements Initializable {
     private TableColumn<Negozio, String> indirizzoColumn;
 
     @FXML
-    private TableColumn<Negozio, Enum> categoriaColumn;
+    private TableColumn<Negozio, String> categoriaColumn;
 
     @FXML
     private Button indietroButton;
@@ -78,7 +78,7 @@ public class VisualizzaNegoziController implements Initializable {
         });
         //colonna categoria (categoria negozio)
         categoriaColumn.setCellValueFactory(cella -> {
-            return new SimpleObjectProperty(cella.getValue().getCategoria());
+            return new SimpleStringProperty(cella.getValue().getCategoria().name());
         });
         //Inizializzare la choiceBox
         filtraCategoriaChoiceBox.getItems().setAll(gestoreNegozi.getCategorieAsStrings());
