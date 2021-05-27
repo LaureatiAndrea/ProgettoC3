@@ -30,6 +30,7 @@ public class GestoreNegozi {
     public GestoreNegozi(){
         db = MySqlDatabase.getInstance();
         negozi = db.getAllNegozi();
+        System.out.println(this.negozi);
     }
 
     public ArrayList<Negozio> getNegozi() {

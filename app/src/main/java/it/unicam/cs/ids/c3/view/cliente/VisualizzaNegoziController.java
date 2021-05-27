@@ -58,6 +58,10 @@ public class VisualizzaNegoziController implements Initializable {
         primaryStage.sizeToScene();
     }
 
+    @FXML
+    void filtraCategoriaChoiceBoxClicked(ActionEvent event){
+
+    }
 
     @FXML
     void filtraButtonPressed(ActionEvent event) {

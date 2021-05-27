@@ -17,13 +17,13 @@ public class SimpleNegozio implements Negozio{
     private ArrayList<Promozione> promozioni;
     private int idImpiegato;
 
-    public SimpleNegozio(int id,String nome,String indirizzo,Categoria_Merceologica categoria, int idImpiegato){
+    public SimpleNegozio(int id,String nome,String indirizzo,Categoria_Merceologica categoria, int idImpiegato,ArrayList<Promozione> promozioni){
         this.id = id;
         this.nome = nome;
         this.indirizzo = indirizzo;
         this.categoria = categoria;
         this.idImpiegato = idImpiegato;
-        promozioni = new ArrayList<>();
+        this.promozioni = promozioni;
     }
 
     @Override

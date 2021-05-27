@@ -9,6 +9,7 @@ import it.unicam.cs.ids.c3.magazzino.Magazzino;
 import it.unicam.cs.ids.c3.magazzino.SimpleMagazzino;
 import it.unicam.cs.ids.c3.negozio.Categoria_Merceologica;
 import it.unicam.cs.ids.c3.negozio.Negozio;
+import it.unicam.cs.ids.c3.negozio.Promozione;
 import it.unicam.cs.ids.c3.negozio.SimpleNegozio;
 import it.unicam.cs.ids.c3.ordine.Ordine;
 import it.unicam.cs.ids.c3.ordine.SimpleOrdine;
@@ -174,9 +175,18 @@ public class MySqlDatabase {
             PreparedStatement query = connection.prepareStatement("SELECT * FROM negozi");
             ResultSet rs = query.executeQuery();
             while(rs.next()){
+                //Per ogni negozio, deve recuperare anche le promozioni
+                query = connection.prepareStatement("SELECT * FROM promozioni WHERE negozioId = ?");
+                query.setInt(1,rs.getInt("id"));
+                ResultSet rs2 = query.executeQuery();
+                ArrayList<Promozione> promozioniToAdd = new ArrayList<Promozione>();
+                while(rs2.next()){
+                    promozioniToAdd.add(new Promozione(rs2.getInt("id"),
+                            rs2.getDouble("percentualeSconto"),rs2.getInt("promozioneAttiva")));
+                }
                 toReturn.add(new SimpleNegozio(rs.getInt("id"),rs.getString("nome"),
                         rs.getString("indirizzo"),
-                        Categoria_Merceologica.valueOf(rs.getString("categoria")), rs.getInt("idImpiegato")));
+                        Categoria_Merceologica.valueOf(rs.getString("categoria")), rs.getInt("idImpiegato"),promozioniToAdd));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

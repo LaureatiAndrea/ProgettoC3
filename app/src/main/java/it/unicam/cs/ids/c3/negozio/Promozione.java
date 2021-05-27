@@ -1,6 +1,5 @@
 package it.unicam.cs.ids.c3.negozio;
 
-import java.util.Objects;
 
 /**
  * Questa classe descrive una promozione appartenente ad un determinato negozio. Ogni promozione  ha una percentuale
@@ -19,6 +18,14 @@ public class Promozione {
         this.idPromozione = id;
         this.percentualeSconto = percentualeSconto;
         this.statoPromozione = true;
+    }
+
+    public Promozione(int id, double percentualeSconto, int promozioneAttiva) {
+        this.idPromozione = id;
+        this.percentualeSconto = percentualeSconto;
+        if(promozioneAttiva==0){
+            statoPromozione =  false;
+        }else statoPromozione = true;
     }
 
     public int getId(){
@@ -45,4 +52,12 @@ public class Promozione {
         this.statoPromozione = statoPromozione;
     }
 
+    @Override
+    public String toString() {
+        return "Promozione{" +
+                "idPromozione=" + idPromozione +
+                ", percentualeSconto=" + percentualeSconto +
+                ", statoPromozione=" + statoPromozione +
+                '}';
+    }
 }
