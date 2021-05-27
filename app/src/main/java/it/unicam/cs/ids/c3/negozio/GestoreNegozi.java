@@ -70,5 +70,24 @@ public class GestoreNegozi {
         }
     }
 
+    public ArrayList<String> getCategorieAsStrings() {
+        ArrayList<String> toReturn = new ArrayList<>();
+        for(Negozio n : this.negozi){
+            if(!toReturn.contains(n.getCategoria().name())){
+                toReturn.add(n.getCategoria().name());
+            }
+        }
+        return toReturn;
+    }
 
+    public ArrayList<Negozio> getNegoziByCategoria(String categoria) {
+        Categoria_Merceologica cat = Categoria_Merceologica.valueOf(categoria);
+        ArrayList<Negozio> toReturn = new ArrayList<>();
+        for(Negozio n : negozi){
+            if(n.getCategoria().equals(cat)){
+                toReturn.add(n);
+            }
+        }
+        return toReturn;
+    }
 }

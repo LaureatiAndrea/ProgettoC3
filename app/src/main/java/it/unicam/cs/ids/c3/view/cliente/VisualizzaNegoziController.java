@@ -41,7 +41,7 @@ public class VisualizzaNegoziController implements Initializable {
     private Button indietroButton;
 
     @FXML
-    private ChoiceBox<Enum> filtraCategoriaChoiceBox;
+    private ChoiceBox<String> filtraCategoriaChoiceBox;
 
     @FXML
     void annullaButtonPressed(ActionEvent event) {
@@ -58,10 +58,11 @@ public class VisualizzaNegoziController implements Initializable {
         primaryStage.sizeToScene();
     }
 
-    //TODO: da implementare
-    @FXML
-    void filtraCategoriaChoiceBoxClicked(MouseEvent event) {
 
+    @FXML
+    void filtraButtonPressed(ActionEvent event) {
+        //Filtra i negozi nella tabella in accordo con la categoria selezionata nella choicebox
+        tableView.setItems(FXCollections.observableArrayList(gestoreNegozi.getNegoziByCategoria(filtraCategoriaChoiceBox.getSelectionModel().getSelectedItem())));
     }
 
     @Override
@@ -80,6 +81,9 @@ public class VisualizzaNegoziController implements Initializable {
         categoriaColumn.setCellValueFactory(cella -> {
             return new SimpleObjectProperty(cella.getValue().getCategoria());
         });
+        //Inizializzare la choiceBox
+        filtraCategoriaChoiceBox.getItems().setAll(gestoreNegozi.getCategorieAsStrings());
+        filtraCategoriaChoiceBox.getSelectionModel().selectFirst();
     }
 
 }

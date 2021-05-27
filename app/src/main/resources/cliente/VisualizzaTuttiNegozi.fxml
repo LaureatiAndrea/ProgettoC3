@@ -23,6 +23,8 @@
          </columns>
       </TableView>
       <Button fx:id="indietroButton" layoutX="14.0" layoutY="377.0" mnemonicParsing="false" onAction="#annullaButtonPressed" prefHeight="42.0" prefWidth="140.0" text="Indietro" />
-      <ChoiceBox fx:id="filtraCategoriaChoiceBox" layoutX="469.0" layoutY="43.0" onMouseClicked="#filtraCategoriaChoiceBoxClicked" prefWidth="150.0" />
+      <ChoiceBox fx:id="filtraCategoriaChoiceBox" layoutX="354.0" layoutY="386.0" onMouseClicked="#filtraCategoriaChoiceBoxClicked" prefWidth="150.0" />
+      <Button fx:id="filtraButton" layoutX="523.0" layoutY="386.0" mnemonicParsing="false" onAction="#filtraButtonPressed" prefHeight="25.0" prefWidth="96.0" text="Filtra" />
+      <Label layoutX="354.0" layoutY="369.0" text="Categoria :" />
    </children>
 </Pane>
