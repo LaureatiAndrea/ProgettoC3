@@ -103,4 +103,28 @@ public class GestoreNegozi {
         }
         return toReturn;
     }
+
+    public ArrayList<Negozio> getNegoziConPromozioni() {
+        ArrayList<Negozio> toReturn = new ArrayList<>();
+        for (Negozio n : this.negozi) {
+            for (Promozione p : n.getPromozioni()) {
+                if(p.getStatoPromozione() == true) {
+                    toReturn.add(n);
+                }
+            }
+        }
+        return toReturn;
+    }
+
+    public ArrayList<Negozio> getNegoziConPromozioniByCategoria(String categoria) {
+        Categoria_Merceologica cat = Categoria_Merceologica.valueOf(categoria);
+        ArrayList<Negozio> toReturn = new ArrayList<>();
+        for (Negozio n : getNegoziConPromozioni()) {
+            if(n.getCategoria().equals(cat)) {
+                toReturn.add(n);
+            }
+        }
+        return toReturn;
+    }
+
 }

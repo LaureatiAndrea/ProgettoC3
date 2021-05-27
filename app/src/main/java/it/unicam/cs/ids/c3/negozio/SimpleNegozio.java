@@ -17,7 +17,8 @@ public class SimpleNegozio implements Negozio{
     private ArrayList<Promozione> promozioni;
     private int idImpiegato;
 
-    public SimpleNegozio(int id,String nome,String indirizzo,Categoria_Merceologica categoria, int idImpiegato,ArrayList<Promozione> promozioni){
+    public SimpleNegozio(int id,String nome,String indirizzo,Categoria_Merceologica categoria,
+                         int idImpiegato,ArrayList<Promozione> promozioni){
         this.id = id;
         this.nome = nome;
         this.indirizzo = indirizzo;
@@ -108,4 +109,15 @@ public class SimpleNegozio implements Negozio{
     public void removePromozione(Promozione p) {
         this.promozioni.remove(p);
     }
+
+    @Override
+    public Promozione getPromozioneAttiva() {
+        for (Promozione p : this.promozioni) {
+            if(p.getStatoPromozione() == true) {
+                return p;
+            }
+        }
+        return null;
+    }
+
 }

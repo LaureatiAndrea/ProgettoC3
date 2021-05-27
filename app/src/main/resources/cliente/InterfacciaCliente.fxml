@@ -17,5 +17,10 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <Button fx:id="visualizzaPromozioniButton" layoutY="160.0" mnemonicParsing="false" onAction="#visualizzaPromozioniButtonPressed" prefHeight="63.0" prefWidth="350.0" style="-fx-background-color: none;" text="Visualizza tutte le promozioni attive">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

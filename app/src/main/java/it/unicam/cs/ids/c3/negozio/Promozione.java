@@ -2,8 +2,8 @@ package it.unicam.cs.ids.c3.negozio;
 
 
 /**
- * Questa classe descrive una promozione appartenente ad un determinato negozio. Ogni promozione  ha una percentuale
- * di sconto , ed uno stato ( Attiva, Non attiva ).
+ * Questa classe descrive una promozione appartenente ad un determinato negozio. Ogni promozione  ha una
+ * percentuale di sconto , ed uno stato ( Attiva, Non attiva ).
  *
  * @author Laureati Andrea Francesco, Gaetani Marco ( TEAM LAGM )
  */

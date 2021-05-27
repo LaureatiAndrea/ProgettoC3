@@ -18,6 +18,9 @@ public class ICliente implements Initializable {
     private Button visualizzaTuttiNegoziButton;
 
     @FXML
+    private Button visualizzaPromozioniButton;
+
+    @FXML
     void visualizzaTuttiNegoziButtonPressed(ActionEvent event) {
         Stage primaryStage = (Stage)visualizzaTuttiNegoziButton.getScene().getWindow();
         Parent root = null;
@@ -31,6 +34,21 @@ public class ICliente implements Initializable {
         primaryStage.sizeToScene();
     }
 
+    @FXML
+    void visualizzaPromozioniButtonPressed(ActionEvent event) {
+        Stage primaryStage = (Stage)visualizzaPromozioniButton.getScene().getWindow();
+        Parent root = null;
+        try{
+            root = FXMLLoader.load(getClass().getResource("/cliente/VisualizzaPromozioni.fxml"));
+        }catch (IOException e){
+            e.printStackTrace();
+            System.out.println("Impossibile aprire l'interfaccia del cliente");
+        }
+        primaryStage.getScene().setRoot(root);
+        primaryStage.sizeToScene();
+    }
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // Cambia il colore del button on mouse hover.
@@ -38,6 +56,11 @@ public class ICliente implements Initializable {
                 e -> visualizzaTuttiNegoziButton.setStyle("-fx-background-color: DARKGRAY"));
         visualizzaTuttiNegoziButton.setOnMouseExited(
                 e -> visualizzaTuttiNegoziButton.setStyle("-fx-background-color: TRANSPARENT"));
+
+        visualizzaPromozioniButton.setOnMouseEntered(
+                e -> visualizzaPromozioniButton.setStyle("-fx-background-color: DARKGRAY"));
+        visualizzaPromozioniButton.setOnMouseExited(
+                e -> visualizzaPromozioniButton.setStyle("-fx-background-color: TRANSPARENT"));
     }
 }
 

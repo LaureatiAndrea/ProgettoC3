@@ -87,4 +87,9 @@ public interface Negozio {
      */
     void removePromozione(Promozione p);
 
+    /**
+     * Restituisce la promozione attiva.
+     * @return la promozione attiva
+     */
+    Promozione getPromozioneAttiva();
 }
