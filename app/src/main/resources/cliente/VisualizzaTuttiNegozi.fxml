@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.cliente.VisualizzaNegoziController">
+   <children>
+      <Label layoutX="254.0" layoutY="23.0" text="VISUALIZZA NEGOZI">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableView" layoutX="22.0" layoutY="81.0" prefHeight="279.0" prefWidth="597.0">
+         <columns>
+            <TableColumn fx:id="negozioColumn" prefWidth="219.0" text="Negozio" />
+            <TableColumn fx:id="indirizzoColumn" prefWidth="209.0" text="Indirizzo" />
+            <TableColumn fx:id="categoriaColumn" prefWidth="168.0" text="Categoria" />
+         </columns>
+      </TableView>
+      <Button fx:id="indietroButton" layoutX="14.0" layoutY="377.0" mnemonicParsing="false" onAction="#annullaButtonPressed" prefHeight="42.0" prefWidth="140.0" text="Indietro" />
+      <ChoiceBox fx:id="filtraCategoriaChoiceBox" layoutX="469.0" layoutY="43.0" onMouseClicked="#filtraCategoriaChoiceBoxClicked" prefWidth="150.0" />
+   </children>
+</Pane>

@@ -16,6 +16,7 @@ public interface Ordine {
      * @param id il nuovo id dell'ordine
      */
     void setId(int id);
+
     /**
      * @return l'ID del it.unicam.cs.ids.c3.cliente
      */
@@ -65,6 +66,7 @@ public interface Ordine {
     int getIdCorriere();
 
     int getIdNegozio();
+
     void setIdNegozio(int idNegozio);
 
     String getNote();

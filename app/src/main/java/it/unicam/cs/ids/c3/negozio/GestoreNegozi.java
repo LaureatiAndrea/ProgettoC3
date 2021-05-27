@@ -32,6 +32,10 @@ public class GestoreNegozi {
         negozi = db.getAllNegozi();
     }
 
+    public ArrayList<Negozio> getNegozi() {
+        return this.negozi;
+    }
+
     /**
      * Aggiunge un negozio alla lista dei negozi che usano il sistema C3.
      * @param toAdd il negozio da aggiungere.

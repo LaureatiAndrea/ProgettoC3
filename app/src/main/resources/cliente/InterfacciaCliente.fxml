@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="279.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.cliente.ICliente">
+   <children>
+      <Label layoutX="108.0" layoutY="37.0" text="MENU CLIENTE ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="visualizzaTuttiNegoziButton" layoutY="97.0" mnemonicParsing="false" onAction="#visualizzaTuttiNegoziButtonPressed" prefHeight="63.0" prefWidth="350.0" style="-fx-background-color: none;" text="Visualizza tutti i negozi">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
