@@ -1,8 +1,10 @@
 package it.unicam.cs.ids.c3.ordine;
 
+import it.unicam.cs.ids.c3.corriere.Corriere;
 import it.unicam.cs.ids.c3.database.MySqlDatabase;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 /**
  * Questa classe si occupa di gestire tutti gli ordini nel sistema C3.
@@ -41,6 +43,17 @@ public class GestoreOrdini {
     public ArrayList<Ordine> getOrdini(){
         return this.ordini;
     }
+
+    public ArrayList<Ordine> getOrdini(int idCorriere){
+        ArrayList<Ordine> toReturn = new ArrayList<>();
+        for(Ordine o : ordini){
+            if(o.getIdCorriere()==idCorriere){
+                toReturn.add(o);
+            }
+        }
+        return toReturn;
+    }
+
     /**
      * Aggiunge un ordine alla lista degli ordini
      * @param toAdd l'ordine da aggiungere
@@ -98,10 +111,10 @@ public class GestoreOrdini {
         this.temp = temp;
     }
 
-    public ArrayList<Ordine> getOrdiniInNegozio(){
+    public ArrayList<Ordine> getOrdiniInNegozio(int idCorriere){
         ArrayList<Ordine> toReturn = new ArrayList<>();
         for(Ordine o : this.ordini){
-            if(o.getStatoOrdine().equals(Stato_Ordine.IN_NEGOZIO)){
+            if((o.getStatoOrdine().equals(Stato_Ordine.IN_NEGOZIO))&&(o.getIdCorriere()==idCorriere)){
                 toReturn.add(o);
             }
         }
@@ -129,10 +142,10 @@ public class GestoreOrdini {
      * Restituisce soltanto gli ordini che abbiano lo stato IN_VIAGGIO
      * @return la lista degli ordini
      */
-    public ArrayList<Ordine> getOrdiniInViaggio() {
+    public ArrayList<Ordine> getOrdiniInViaggio(int idCorriere) {
         ArrayList<Ordine> toReturn = new ArrayList<>();
         for(Ordine o : this.ordini){
-            if(o.getStatoOrdine().equals(Stato_Ordine.TRASPORTO_IN_CORSO)){
+            if((o.getStatoOrdine().equals(Stato_Ordine.TRASPORTO_IN_CORSO))&&(o.getIdCorriere()==idCorriere)){
                 toReturn.add(o);
             }
         }
@@ -143,10 +156,10 @@ public class GestoreOrdini {
      * Restituisce soltanto gli ordini che abbiano lo stato CONSEGNATO_AL_CLIENTE
      * @return la lista degli ordini
      */
-    public ArrayList<Ordine> getOrdiniConsegnati() {
+    public ArrayList<Ordine> getOrdiniConsegnati(int idCorriere) {
         ArrayList<Ordine> toReturn = new ArrayList<>();
         for(Ordine o : this.ordini){
-            if(o.getStatoOrdine()==Stato_Ordine.CONSEGNATO_AL_CLIENTE){
+            if((o.getStatoOrdine()==Stato_Ordine.CONSEGNATO_AL_CLIENTE)&&(o.getIdCorriere()==idCorriere)){
                 toReturn.add(o);
             }
         }
@@ -157,10 +170,10 @@ public class GestoreOrdini {
      * Restituisce la lista degli ordini con stato DEPOSITATO_IN_MAGAZZINO
      * @return la lista degli ordini
      */
-    public ArrayList<Ordine> getOrdiniDepositati() {
+    public ArrayList<Ordine> getOrdiniDepositati(int idCorriere) {
         ArrayList<Ordine> toReturn = new ArrayList<>();
         for(Ordine o : this.ordini){
-            if(o.getStatoOrdine()==Stato_Ordine.DEPOSITATO_IN_MAGAZZINO){
+            if((o.getStatoOrdine()==Stato_Ordine.DEPOSITATO_IN_MAGAZZINO)&&(o.getIdCorriere()==idCorriere)){
                 toReturn.add(o);
             }
         }

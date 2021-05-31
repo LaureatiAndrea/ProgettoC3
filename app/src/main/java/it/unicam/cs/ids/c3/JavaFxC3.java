@@ -19,7 +19,7 @@ public class JavaFxC3 extends Application {
     public void start(Stage primaryStage) throws Exception {
         // Fa partire la prima finestra dell'applicazione.
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/C3Application.fxml"));
+        loader.setLocation(getClass().getResource("/C3Login.fxml"));
         loader.load();
         Parent parent = loader.getRoot();
         Scene scene = new Scene(parent);

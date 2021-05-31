@@ -51,11 +51,11 @@ public class SelezionaStatoController {
         //TODO : Deve funzionare con il corriere loggato invece che col parametro
         Alert alert;
         if(disponibileRadioButton.isSelected()){
-            gestoreCorrieri.setStatoCorriere(1, Stato_Corriere.DISPONIBILE);
+            gestoreCorrieri.setStatoCorriere(gestoreCorrieri.getLoggedInUser().getId(), Stato_Corriere.DISPONIBILE);
             alert = new Alert(Alert.AlertType.CONFIRMATION,"Stato modificato");
             alert.showAndWait();
         }else if(nonDisponibileRadioButton.isSelected()){
-            gestoreCorrieri.setStatoCorriere(1,Stato_Corriere.NON_DISPONIBILE);
+            gestoreCorrieri.setStatoCorriere(gestoreCorrieri.getLoggedInUser().getId(),Stato_Corriere.NON_DISPONIBILE);
             alert = new Alert(Alert.AlertType.CONFIRMATION,"Stato modificato");
             alert.showAndWait();
             annullaButtonClicked(null);

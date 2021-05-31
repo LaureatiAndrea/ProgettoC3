@@ -1,5 +1,6 @@
 package it.unicam.cs.ids.c3.view.corriere;
 
+import it.unicam.cs.ids.c3.corriere.GestoreCorrieri;
 import it.unicam.cs.ids.c3.magazzino.GestoreMagazzini;
 import it.unicam.cs.ids.c3.negozio.GestoreNegozi;
 import it.unicam.cs.ids.c3.ordine.GestoreOrdini;
@@ -26,6 +27,7 @@ public class VisualizzaOrdiniController implements Initializable {
     private GestoreOrdini gestoreOrdini = GestoreOrdini.getInstance();
     private GestoreMagazzini gestoreMagazzini = GestoreMagazzini.getInstance();
     private GestoreNegozi gestoreNegozi = GestoreNegozi.getInstance();
+    private GestoreCorrieri gestoreCorrieri = GestoreCorrieri.getInstance();
 
     @FXML
     private TableView<Ordine> tableView;
@@ -82,7 +84,7 @@ public class VisualizzaOrdiniController implements Initializable {
         depositatoInMagazzinoRadioButton.setSelected(false);
         trasportoInCorsoRadioButton.setSelected(false);
         //Mostra soltanto gli ordini consegnati al cliente
-        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniConsegnati()));
+        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniConsegnati(gestoreCorrieri.getLoggedInUser().getId())));
     }
 
     @FXML
@@ -92,7 +94,7 @@ public class VisualizzaOrdiniController implements Initializable {
         depositatoInMagazzinoRadioButton.setSelected(false);
         trasportoInCorsoRadioButton.setSelected(false);
         //Mostra soltanto gli ordini consegnati al cliente
-        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInNegozio()));
+        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInNegozio(gestoreCorrieri.getLoggedInUser().getId())));
     }
 
     @FXML
@@ -102,7 +104,7 @@ public class VisualizzaOrdiniController implements Initializable {
         consegnatoAlClienteRadioButton.setSelected(false);
         trasportoInCorsoRadioButton.setSelected(false);
         //Mostra soltanto gli ordini consegnati al cliente
-        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniDepositati()));
+        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniDepositati(gestoreCorrieri.getLoggedInUser().getId())));
     }
 
     @FXML
@@ -112,13 +114,13 @@ public class VisualizzaOrdiniController implements Initializable {
         depositatoInMagazzinoRadioButton.setSelected(false);
         consegnatoAlClienteRadioButton.setSelected(false);
         //Mostra soltanto gli ordini consegnati al cliente
-        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInViaggio()));
+        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInViaggio(gestoreCorrieri.getLoggedInUser().getId())));
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //TODO : Deve caricare la tabella con tutti gli ordini appartenenti al corriere loggato.
-        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdini()));
+        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdini(gestoreCorrieri.getLoggedInUser().getId())));
         //Colonna destinazione ( Indirizzo di consegna )
         destinazioneColumn.setCellValueFactory(cella -> {
             if(cella.getValue().getDestinazione()!=null) return new SimpleStringProperty("Residenza : "

@@ -1,8 +1,10 @@
 package it.unicam.cs.ids.c3.database;
 
 import it.unicam.cs.ids.c3.cliente.Cliente;
+import it.unicam.cs.ids.c3.cliente.GestoreClienti;
 import it.unicam.cs.ids.c3.cliente.SimpleCliente;
 import it.unicam.cs.ids.c3.corriere.Corriere;
+import it.unicam.cs.ids.c3.corriere.GestoreCorrieri;
 import it.unicam.cs.ids.c3.corriere.SimpleCorriere;
 import it.unicam.cs.ids.c3.corriere.Stato_Corriere;
 import it.unicam.cs.ids.c3.magazzino.Magazzino;
@@ -46,10 +48,11 @@ public class MySqlDatabase {
 
     /**
      * La classe MySqlDatabase viene implementata come un Singleton
+     *
      * @return un istanza della connessione al database
      */
-    public static MySqlDatabase getInstance(){
-        if(instance == null){
+    public static MySqlDatabase getInstance() {
+        if (instance == null) {
             instance = new MySqlDatabase();
         }
         return instance;
@@ -57,15 +60,15 @@ public class MySqlDatabase {
 
     /**
      * Questo metodo si occupa di eseguire interrogazioni sul database
-     * @param query     la query SQL da eseguire
-     * @return          il resultset contenente il risultato della query
+     *
+     * @param query la query SQL da eseguire
+     * @return il resultset contenente il risultato della query
      */
-    public ResultSet query(String query){
+    public ResultSet query(String query) {
         try {
             Statement statement = connection.createStatement();
             resultset = statement.executeQuery(query);
-        }
-        catch (SQLException ex){
+        } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
@@ -76,7 +79,7 @@ public class MySqlDatabase {
     /**
      * Metodo getter per la connessione al database
      */
-    public Connection getConnection(){
+    public Connection getConnection() {
         return this.connection;
     }
 
@@ -85,8 +88,8 @@ public class MySqlDatabase {
         try {
             PreparedStatement query = connection.prepareStatement("SELECT * FROM clienti");
             ResultSet rs = query.executeQuery();
-            while(rs.next()){
-                toReturn.add(new SimpleCliente(rs.getInt("id"),rs.getString("nome"),rs.getString("cognome"),rs.getString("indirizzo")));
+            while (rs.next()) {
+                toReturn.add(new SimpleCliente(rs.getInt("id"), rs.getString("nome"), rs.getString("cognome"), rs.getString("indirizzo")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -96,6 +99,7 @@ public class MySqlDatabase {
 
     /**
      * Restituisce la lista dei magazzini presenti sul DB
+     *
      * @return la lista dei magazzini
      */
     public ArrayList<Magazzino> getAllMagazzini() {
@@ -105,8 +109,8 @@ public class MySqlDatabase {
             ResultSet rs = query.executeQuery();
             //Salta il magazzino con indice -1
             rs.next();
-            while(rs.next()){
-                toReturn.add(new SimpleMagazzino(rs.getInt("id"),rs.getString("nome"),rs.getString("indirizzo")));
+            while (rs.next()) {
+                toReturn.add(new SimpleMagazzino(rs.getInt("id"), rs.getString("nome"), rs.getString("indirizzo")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -116,6 +120,7 @@ public class MySqlDatabase {
 
     /**
      * Restituisce la lista dei corrieri presenti sul DB
+     *
      * @return la lista dei corrieri
      */
     public ArrayList<Corriere> getAllCorrieri() {
@@ -123,8 +128,8 @@ public class MySqlDatabase {
         try {
             PreparedStatement query = connection.prepareStatement("SELECT * FROM corrieri");
             ResultSet rs = query.executeQuery();
-            while(rs.next()){
-                toReturn.add(new SimpleCorriere(rs.getInt("id"),rs.getString("nome"),
+            while (rs.next()) {
+                toReturn.add(new SimpleCorriere(rs.getInt("id"), rs.getString("nome"),
                         rs.getString("cognome"), Stato_Corriere.valueOf(rs.getString("stato"))));
             }
         } catch (SQLException throwables) {
@@ -135,6 +140,7 @@ public class MySqlDatabase {
 
     /**
      * Restituisce la lista degli ordini presenti sul DB
+     *
      * @return la lista degli ordini
      */
     public ArrayList<Ordine> getAllOrdini() {
@@ -142,7 +148,7 @@ public class MySqlDatabase {
         try {
             PreparedStatement query = connection.prepareStatement("SELECT * FROM ordini");
             ResultSet rs = query.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 toReturn.add(new SimpleOrdine(rs.getInt("id"),
                         rs.getInt("idCliente"),
                         rs.getString("destinazione"),
@@ -161,6 +167,7 @@ public class MySqlDatabase {
 
     /**
      * Effettua la INSERT di un nuovo ordine sul DB
+     *
      * @param toAdd l'ordine da inserire
      */
     public void addOrdine(Ordine toAdd) {
@@ -187,6 +194,7 @@ public class MySqlDatabase {
 
     /**
      * Restituisce tutti i negozi presenti sul DB
+     *
      * @return la lista dei negozi
      */
     public ArrayList<Negozio> getAllNegozi() {
@@ -194,19 +202,19 @@ public class MySqlDatabase {
         try {
             PreparedStatement query = connection.prepareStatement("SELECT * FROM negozi");
             ResultSet rs = query.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 //Per ogni negozio, deve recuperare anche le promozioni
                 query = connection.prepareStatement("SELECT * FROM promozioni WHERE negozioId = ?");
-                query.setInt(1,rs.getInt("id"));
+                query.setInt(1, rs.getInt("id"));
                 ResultSet rs2 = query.executeQuery();
                 ArrayList<Promozione> promozioniToAdd = new ArrayList<Promozione>();
-                while(rs2.next()){
+                while (rs2.next()) {
                     promozioniToAdd.add(new Promozione(rs2.getInt("id"),
-                            rs2.getDouble("percentualeSconto"),rs2.getInt("promozioneAttiva")));
+                            rs2.getDouble("percentualeSconto"), rs2.getInt("promozioneAttiva")));
                 }
-                toReturn.add(new SimpleNegozio(rs.getInt("id"),rs.getString("nome"),
+                toReturn.add(new SimpleNegozio(rs.getInt("id"), rs.getString("nome"),
                         rs.getString("indirizzo"),
-                        Categoria_Merceologica.valueOf(rs.getString("categoria")), rs.getInt("idImpiegato"),promozioniToAdd));
+                        Categoria_Merceologica.valueOf(rs.getString("categoria")), rs.getInt("idImpiegato"), promozioniToAdd));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -216,15 +224,16 @@ public class MySqlDatabase {
 
     /**
      * Modifica lo stato di un particolare ordine presente sul DB
+     *
      * @param idOrdine l'id dell'ordine da modificare
-     * @param stato lo stato dell'ordine
+     * @param stato    lo stato dell'ordine
      */
     public void setStatoOrdine(int idOrdine, String stato) {
         try {
             PreparedStatement query = connection.
                     prepareStatement("UPDATE c3.ordini SET statoOrdine = ? WHERE id = ?");
             query.setString(1, stato);
-            query.setInt(2,idOrdine);
+            query.setInt(2, idOrdine);
             int result = query.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -233,7 +242,8 @@ public class MySqlDatabase {
 
     /**
      * Modifica la disponibilitá di un corriere presente sul DB
-     * @param idCorriere l'id del corriere da modificare
+     *
+     * @param idCorriere    l'id del corriere da modificare
      * @param statoCorriere il nuovo stato del corriere
      */
     public void setStatoCorriere(int idCorriere, Stato_Corriere statoCorriere) {
@@ -241,10 +251,45 @@ public class MySqlDatabase {
             PreparedStatement query = connection.
                     prepareStatement("UPDATE c3.corrieri SET stato = ? WHERE id = ?");
             query.setString(1, statoCorriere.name());
-            query.setInt(2,idCorriere);
+            query.setInt(2, idCorriere);
             int result = query.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public int login(String ruolo, String username, String password) {
+        // Prende tipo di utente, username e password e controlla sul database.
+        // Restituisce true se esiste corrispondenza, false altrimenti.
+        PreparedStatement query;
+        ResultSet rs;
+        try {
+            switch (ruolo) {
+                case "CLIENTE":
+                    query = connection.prepareStatement("SELECT * FROM clienti WHERE username = ? AND password = ?");
+                    query.setString(1, username);
+                    query.setString(2, password);
+                    rs = query.executeQuery();
+                    if(rs.next()){
+                        return rs.getInt("id");
+                    }else return -1;
+                case "CORRIERE":
+                    query = connection.prepareStatement("SELECT * FROM corrieri WHERE username = ? AND password = ?");
+                    query.setString(1, username);
+                    query.setString(2, password);
+                    rs = query.executeQuery();
+                    if(rs.next()){
+                        return rs.getInt("id");
+                    }else return -1;
+                case "IMPIEGATO":
+                    query = connection.prepareStatement("SELECT * FROM impiegati WHERE username = ? AND password = ?");
+                    query.setString(1, username);
+                    query.setString(2, password);
+                    rs = query.executeQuery();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 }

@@ -1,5 +1,6 @@
 package it.unicam.cs.ids.c3.corriere;
 
+import it.unicam.cs.ids.c3.cliente.Cliente;
 import it.unicam.cs.ids.c3.database.MySqlDatabase;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class GestoreCorrieri {
     private ArrayList<Corriere> corrieri;
     private MySqlDatabase db;
     private static GestoreCorrieri instance;
+    private Corriere loggedInUser;
 
     /**
      * Metodo per ottenere l'istanza del GestoreCorrieri ( La classe é implementata come Singleton ).
@@ -97,5 +99,12 @@ public class GestoreCorrieri {
     public void setStatoCorriere(int idCorriere, Stato_Corriere statoCorriere) {
         db.setStatoCorriere(idCorriere,statoCorriere);
         corrieri = db.getAllCorrieri();
+    }
+
+    public void setLoggedInUser(Corriere corriere) {
+        this.loggedInUser = corriere;
+    }
+    public Corriere getLoggedInUser(){
+        return this.loggedInUser;
     }
 }

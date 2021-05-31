@@ -1,5 +1,6 @@
 package it.unicam.cs.ids.c3.view.corriere;
 
+import it.unicam.cs.ids.c3.corriere.GestoreCorrieri;
 import it.unicam.cs.ids.c3.magazzino.GestoreMagazzini;
 import it.unicam.cs.ids.c3.negozio.GestoreNegozi;
 import it.unicam.cs.ids.c3.ordine.GestoreOrdini;
@@ -26,6 +27,7 @@ public class ConsegnaOrdineController implements Initializable {
     private GestoreOrdini gestoreOrdini = GestoreOrdini.getInstance();
     private GestoreNegozi gestoreNegozi = GestoreNegozi.getInstance();
     private GestoreMagazzini gestoreMagazzini = GestoreMagazzini.getInstance();
+    private GestoreCorrieri gestoreCorrieri = GestoreCorrieri.getInstance();
 
 
     @FXML
@@ -83,7 +85,7 @@ public class ConsegnaOrdineController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //Setta la tabella per ospitare ordini
         //TODO : Deve visualizzare solo gli ordini prelevati ( OK FATTO )
-        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInViaggio()));
+        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInViaggio(gestoreCorrieri.getLoggedInUser().getId())));
         //Colonna destinazione ( Indirizzo di consegna )
         destinazioneColumn.setCellValueFactory(cella -> {
             if (cella.getValue().getDestinazione() != null) return new SimpleStringProperty("Residenza : "

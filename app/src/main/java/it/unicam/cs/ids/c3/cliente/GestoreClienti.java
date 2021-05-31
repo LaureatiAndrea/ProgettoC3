@@ -15,6 +15,7 @@ public class GestoreClienti {
     private ArrayList<Cliente> clienti;
     private MySqlDatabase db;
     private static GestoreClienti instance;
+    private Cliente loggedInUser;
 
     /**
      * Metodo per ottenere l'istanza del GestoreClienti ( La classe é implementata come Singleton ).
@@ -72,5 +73,9 @@ public class GestoreClienti {
     public ArrayList<Cliente> getClienti(){
         //TODO : Considera se adattare al database
         return this.clienti;
+    }
+
+    public void setLoggedInUser(Cliente cliente) {
+        this.loggedInUser = cliente;
     }
 }

@@ -1,5 +1,6 @@
 package it.unicam.cs.ids.c3.view.corriere;
 
+import it.unicam.cs.ids.c3.corriere.GestoreCorrieri;
 import it.unicam.cs.ids.c3.magazzino.GestoreMagazzini;
 import it.unicam.cs.ids.c3.negozio.GestoreNegozi;
 import it.unicam.cs.ids.c3.ordine.GestoreOrdini;
@@ -20,12 +21,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 public class PrelevaOrdineController implements Initializable {
 
     private GestoreOrdini gestoreOrdini = GestoreOrdini.getInstance();
     private GestoreMagazzini gestoreMagazzini = GestoreMagazzini.getInstance();
     private GestoreNegozi gestoreNegozi = GestoreNegozi.getInstance();
+    private GestoreCorrieri gestoreCorrieri = GestoreCorrieri.getInstance();
 
     @FXML
     private TableView<Ordine> tableView;
@@ -75,8 +78,8 @@ public class PrelevaOrdineController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //Setta la tabella per ospitare ordini
-        //TODO : Deve visualizzare solo gli ordini ancora da prelevare ( OK FATTO )
-        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInNegozio()));
+        //TODO : Deve visualizzare solo gli ordini ancora da prelevare e del corriere loggato
+        tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInNegozio(gestoreCorrieri.getLoggedInUser().getId())));
         //Colonna destinazione ( Indirizzo di consegna )
         destinazioneColumn.setCellValueFactory(cella -> {
             if(cella.getValue().getDestinazione()!=null) return new SimpleStringProperty("Residenza : "
