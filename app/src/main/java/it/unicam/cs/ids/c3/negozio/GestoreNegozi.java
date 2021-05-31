@@ -104,6 +104,10 @@ public class GestoreNegozi {
         return toReturn;
     }
 
+    /**
+     * Restituisce la lista dei soli negozi con promozioni attive al momento della richiesta.
+     * @return la lista dei negozi con promozioni
+     */
     public ArrayList<Negozio> getNegoziConPromozioni() {
         ArrayList<Negozio> toReturn = new ArrayList<>();
         for (Negozio n : this.negozi) {
@@ -116,6 +120,11 @@ public class GestoreNegozi {
         return toReturn;
     }
 
+    /**
+     * Restituisce la lista dei negozi con promozioni attive di una determinata categoria
+     * @param categoria la categoria che si vuole filtrare
+     * @return la lista dei negozi di quella categoria, con promozioni attive.
+     */
     public ArrayList<Negozio> getNegoziConPromozioniByCategoria(String categoria) {
         Categoria_Merceologica cat = Categoria_Merceologica.valueOf(categoria);
         ArrayList<Negozio> toReturn = new ArrayList<>();

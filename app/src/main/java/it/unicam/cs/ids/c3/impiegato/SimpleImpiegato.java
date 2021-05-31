@@ -3,7 +3,9 @@ package it.unicam.cs.ids.c3.impiegato;
 import java.util.Objects;
 
 /**
- * Classe di default che implementa l'interfaccia Impiegato.
+ * La classe ha la responsabilitá di descrivere un imipiegato, con un suo identificativo, nome cognome e negozio in cui lavora.
+ *
+ * @author Laureati Andrea Francesco, Gaetani Marco ( TEAM LAGM )
  */
 public class SimpleImpiegato implements Impiegato {
 
@@ -61,7 +63,6 @@ public class SimpleImpiegato implements Impiegato {
 
     @Override
     public boolean equals(Object o) {
-        //Due impiegati con lo stesso nome e cognome, e lo stesso negozio sono uguali
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SimpleImpiegato that = (SimpleImpiegato) o;
@@ -70,13 +71,11 @@ public class SimpleImpiegato implements Impiegato {
 
     @Override
     public int hashCode() {
-        //L'hashcode é coerente con l'equals
         return Objects.hash(getNome(), getCognome(), getIdNegozio());
     }
 
     @Override
     public String toString() {
-        //Restituisce una descrizione dell'impiegato nel formato "ID - Cognome Nome, id negozio 132"id
         return id + " - " + cognome + " " + nome + ", id negozio " + idNegozio;
     }
 }

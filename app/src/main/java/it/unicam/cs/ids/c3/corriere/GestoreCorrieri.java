@@ -1,6 +1,5 @@
 package it.unicam.cs.ids.c3.corriere;
 
-import it.unicam.cs.ids.c3.cliente.Cliente;
 import it.unicam.cs.ids.c3.database.MySqlDatabase;
 
 import java.util.ArrayList;
@@ -30,7 +29,6 @@ public class GestoreCorrieri {
     }
 
     public GestoreCorrieri(){
-        //La lista viene recuperata direttamente dal database
         db = MySqlDatabase.getInstance();
         corrieri = db.getAllCorrieri();
     }
@@ -40,7 +38,7 @@ public class GestoreCorrieri {
      * @param c il corriere da aggiungere.
      */
     public void addCorriere(Corriere c){
-        //TODO : Adattare al database
+        //TODO : Implementare interazione con il db.
         corrieri.add(c);
     }
 
@@ -49,7 +47,7 @@ public class GestoreCorrieri {
      * @param c il corriere da rimuovere.
      */
     public void removeCliente(Corriere c){
-        //TODO : Adattare al database
+        //TODO : Implementare interazione con il db.
         corrieri.remove(c);
     }
 
@@ -59,7 +57,6 @@ public class GestoreCorrieri {
      * @return il corriere se é presente, null altrimenti.
      */
     public Corriere getCorriere(int id){
-        //TODO : Considerare se adattare al database
         for(Corriere c : corrieri){
             if (c.getId() == id )
                 return c;
@@ -72,7 +69,6 @@ public class GestoreCorrieri {
      * @return la lista dei corrieri registrati.
      */
     public ArrayList<Corriere> getCorrieri(){
-        //TODO : Considerare se adattare al database
         return this.corrieri;
     }
 
@@ -81,7 +77,6 @@ public class GestoreCorrieri {
      * @return la lista dei corrieri disponibili.
      */
     public ArrayList<Corriere> getCorrieriDisponibili(){
-        //TODO : Considerare se adattare al database
         ArrayList<Corriere> toReturn = new ArrayList<>();
         for(Corriere c : corrieri){
             if (c.getStato()==Stato_Corriere.DISPONIBILE){
@@ -101,9 +96,18 @@ public class GestoreCorrieri {
         corrieri = db.getAllCorrieri();
     }
 
+    /**
+     * Setta il corriere attualmente loggato nel sistema C3.
+     * @param corriere il corriere loggato.
+     */
     public void setLoggedInUser(Corriere corriere) {
         this.loggedInUser = corriere;
     }
+
+    /**
+     * Restituisce il corriere attualmente loggato nel sistema C3.
+     * @return il corriere loggato
+     */
     public Corriere getLoggedInUser(){
         return this.loggedInUser;
     }

@@ -23,7 +23,6 @@ public class SimpleCorriere implements Corriere {
     }
 
     public SimpleCorriere(int id, String nome, String cognome, Stato_Corriere stato) {
-        //Costruttore utilizzato dal database.
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -72,7 +71,6 @@ public class SimpleCorriere implements Corriere {
 
     @Override
     public boolean equals(Object o) {
-        //Due corrieri si considerano uguali se hanno stesso nome e cognome.
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SimpleCorriere that = (SimpleCorriere) o;
@@ -81,13 +79,11 @@ public class SimpleCorriere implements Corriere {
 
     @Override
     public int hashCode() {
-        //L'hashcode é coerente con l'equals.
         return Objects.hash(getNome(), getCognome());
     }
 
     @Override
     public String toString() {
-        //Restituisce i dettagli del corriere nel formato " ID - Cognome Nome "
         return id + " - " + cognome + " " + nome;
     }
 }

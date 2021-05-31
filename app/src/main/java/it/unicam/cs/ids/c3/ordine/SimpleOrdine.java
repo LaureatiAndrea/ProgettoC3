@@ -35,7 +35,6 @@ public class SimpleOrdine implements Ordine {
 
     public SimpleOrdine(int idOrdine, int idCliente, String destinazione, String note, int idMagazzino, int idNegozio,
                         int codiceRitiro, int idCorriere, String stato){
-        //Costruttore utilizzato dal database.
         this.idOrdine = idOrdine;
         this.idCliente = idCliente;
         this.destinazione = destinazione;

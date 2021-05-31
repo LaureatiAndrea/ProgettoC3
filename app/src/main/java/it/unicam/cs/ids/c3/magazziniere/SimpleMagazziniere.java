@@ -1,7 +1,5 @@
 package it.unicam.cs.ids.c3.magazziniere;
 
-import it.unicam.cs.ids.c3.magazziniere.Magazziniere;
-
 /**
  * Classe di default che implementa l'interfaccia Magazziniere.
  */

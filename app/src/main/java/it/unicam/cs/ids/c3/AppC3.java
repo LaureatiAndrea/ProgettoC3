@@ -10,7 +10,7 @@ import javafx.application.Application;
 public class AppC3 {
 
     public static void main(String[] args){
-        //Deve avviare l'interfaccia grafica.
+        //Avvia l'ìnterfaccia in JavaFX
         Application.launch(JavaFxC3.class);
     }
 }

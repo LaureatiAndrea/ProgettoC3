@@ -11,21 +11,20 @@ public class Promozione {
 
     private int idPromozione;
     private double percentualeSconto;
-    //TODO : Cambiare in PROMOZIONE ATTIVA
-    private boolean statoPromozione;
+    private boolean promozioneAttiva;
 
     public Promozione(int id, double percentualeSconto){
         this.idPromozione = id;
         this.percentualeSconto = percentualeSconto;
-        this.statoPromozione = true;
+        this.promozioneAttiva = true;
     }
 
     public Promozione(int id, double percentualeSconto, int promozioneAttiva) {
         this.idPromozione = id;
         this.percentualeSconto = percentualeSconto;
         if(promozioneAttiva==0){
-            statoPromozione =  false;
-        }else statoPromozione = true;
+            this.promozioneAttiva =  false;
+        }else this.promozioneAttiva = true;
     }
 
     public int getId(){
@@ -45,11 +44,11 @@ public class Promozione {
     }
 
     public boolean getStatoPromozione(){
-        return this.statoPromozione;
+        return this.promozioneAttiva;
     }
 
     public void setStatoPromozione(boolean statoPromozione){
-        this.statoPromozione = statoPromozione;
+        this.promozioneAttiva = statoPromozione;
     }
 
     @Override
@@ -57,7 +56,7 @@ public class Promozione {
         return "Promozione{" +
                 "idPromozione=" + idPromozione +
                 ", percentualeSconto=" + percentualeSconto +
-                ", statoPromozione=" + statoPromozione +
+                ", statoPromozione=" + promozioneAttiva +
                 '}';
     }
 }

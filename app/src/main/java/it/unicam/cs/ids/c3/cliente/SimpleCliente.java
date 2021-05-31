@@ -64,7 +64,6 @@ public class SimpleCliente implements Cliente {
 
     @Override
     public boolean equals(Object o) {
-        //Due clienti sono considerati uguali se hanno stesso nome, cognome ed indirizzo.
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SimpleCliente that = (SimpleCliente) o;
@@ -73,13 +72,11 @@ public class SimpleCliente implements Cliente {
 
     @Override
     public int hashCode() {
-        //L'hashcode é coerente con l'equals.
         return Objects.hash(getNome(), getCognome(), getIndirizzo());
     }
 
     @Override
     public String toString() {
-        //Restituisce una descrizione nel formato " ID - Cognome Nome , Indirizzo "
         return id + " - " + cognome + " " + nome + " , " + indirizzo;
     }
 }

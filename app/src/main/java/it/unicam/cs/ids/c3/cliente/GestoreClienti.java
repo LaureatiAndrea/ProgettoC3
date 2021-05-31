@@ -28,8 +28,10 @@ public class GestoreClienti {
         return instance;
     }
 
+    /**
+     * Metodo costruttore del GestoreClienti . Recupera dal database tutte le informazioni sui clienti.
+     */
     public GestoreClienti(){
-        //La lista viene recuperata direttamente dal database.
         db = MySqlDatabase.getInstance();
         clienti = db.getAllClienti();
     }
@@ -39,7 +41,7 @@ public class GestoreClienti {
      * @param c il cliente da aggiungere.
      */
     public void addCliente(Cliente c){
-        //TODO : Adattare al database
+        //TODO : Implementare interazione con il db.
         clienti.add(c);
     }
 
@@ -48,7 +50,7 @@ public class GestoreClienti {
      * @param c il cliente da rimuovere.
      */
     public void removeCliente(Cliente c){
-        //TODO : Adattare al database
+        //TODO : Implementare interazione con il db.
         clienti.remove(c);
     }
 
@@ -58,7 +60,7 @@ public class GestoreClienti {
      * @return il cliente se é presente, null altrimenti.
      */
     public Cliente getCliente(int id){
-        // TODO : Considera se adattare al database
+        //TODO : Implementare interazione con il db.
         for(Cliente c : clienti){
             if (c.getId() == id )
             return c;
@@ -75,6 +77,10 @@ public class GestoreClienti {
         return this.clienti;
     }
 
+    /**
+     * Metodo setter per il loggedInUser, ovvero il cliente attualmente loggato nell'applicazione C3.
+     * @param cliente il cliente loggato nell'applicazione.
+     */
     public void setLoggedInUser(Cliente cliente) {
         this.loggedInUser = cliente;
     }

@@ -25,11 +25,8 @@ public class GestoreImpiegati {
     }
 
     public GestoreImpiegati(){
+        //TODO : Implementare interazione con il db.
         impiegati = new ArrayList<>();
-        //TODO : Eliminare ( Dati di prova, vanno sostituiti con un database nella prossima iterazione )
-        impiegati.add(new SimpleImpiegato(1, "Claudio", "Barchetto",1));
-        impiegati.add(new SimpleImpiegato(2, "Paolo", "Bitta",2));
-        impiegati.add(new SimpleImpiegato(3, "Enrico", "Papi",3));
     }
 
     /**

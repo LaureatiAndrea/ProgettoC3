@@ -258,9 +258,14 @@ public class MySqlDatabase {
         }
     }
 
+    /**
+     * Permette di effettuare il login di un utente.
+     * @param ruolo il ruolo dell'utente che vuole autenticarsi
+     * @param username username utente
+     * @param password password utente
+     * @return l'id dell'utente loggato se le credenziali sono giuste, -1 altrimenti.
+     */
     public int login(String ruolo, String username, String password) {
-        // Prende tipo di utente, username e password e controlla sul database.
-        // Restituisce true se esiste corrispondenza, false altrimenti.
         PreparedStatement query;
         ResultSet rs;
         try {
@@ -286,6 +291,9 @@ public class MySqlDatabase {
                     query.setString(1, username);
                     query.setString(2, password);
                     rs = query.executeQuery();
+                    if(rs.next()){
+                        return rs.getInt("id");
+                    }else return -1;
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,24 +1,22 @@
 package it.unicam.cs.ids.c3;
 
-import it.unicam.cs.ids.c3.view.C3View;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 /**
  * Questa classe avvia a tutti gli effetti l'interfaccia grafica dell'applicazione C3.
+ * La prima finestra che viene presentata all'utente è quella di Login.
  *
  * @author Laureati Andrea Francesco, Gaetani Marco ( TEAM LAGM )
  */
 public class JavaFxC3 extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        // Fa partire la prima finestra dell'applicazione.
         FXMLLoader loader = new FXMLLoader();
+        //Mostra la schermata di Login all'utente.
         loader.setLocation(getClass().getResource("/C3Login.fxml"));
         loader.load();
         Parent parent = loader.getRoot();

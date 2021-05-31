@@ -2,6 +2,8 @@ package it.unicam.cs.ids.c3.commerciante;
 
 /**
  * Questa classe descrive un commerciante, cioé il proprietario di un negozio con un nome, cognome e partita iva.
+ *
+ * @author Laureati Andrea Francesco, Gaetani Marco ( TEAM LAGM )
  */
 public class SimpleCommerciante implements Commerciante {
 

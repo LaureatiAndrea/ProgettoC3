@@ -28,7 +28,6 @@ public class GestoreMagazzini {
     }
 
     public GestoreMagazzini(){
-        //La lista viene recuperata direttamente dal database.
         db = MySqlDatabase.getInstance();
         this.magazzini = db.getAllMagazzini();
     }
@@ -38,7 +37,7 @@ public class GestoreMagazzini {
      * @param m il magazzino da aggiungere.
      */
     public void addMagazzino(Magazzino m){
-        //TODO : Adattare al database
+        //TODO : Implementare interazione con il db.
         magazzini.add(m);
     }
 
@@ -47,7 +46,7 @@ public class GestoreMagazzini {
      * @param m il magazzino da rimuovere.
      */
     public void removeMagazzino(Magazzino m){
-        //TODO : Adattare al database
+        //TODO : Implementare interazione con il db.
         magazzini.remove(m);
     }
 
@@ -56,7 +55,6 @@ public class GestoreMagazzini {
      * @return la lista dei magazzini registrati.
      */
     public ArrayList<Magazzino> getMagazzini(){
-        //TODO : Considerare se adattare al database
         return this.magazzini;
     }
 
@@ -66,7 +64,6 @@ public class GestoreMagazzini {
      * @return il magazzino se é presente, null altrimenti.
      */
     public Magazzino getMagazzino(int id){
-        //TODO : Considerare se adattare al database
         for(Magazzino m : magazzini){
             if(m.getId() == id){
                 return m;
