@@ -38,16 +38,4 @@ public interface Impiegato {
      * @param cognome il nuovo cognome.
      */
     void setCognome(String cognome);
-
-    /**
-     * @return l'ID del negozio dove lavora l'impiegato.
-     */
-    int getIdNegozio();
-
-    /**
-     * @param idNegozio il nuovo ID del negozio in cui lavora l'impiegato.
-     */
-    void setIdNegozio(int idNegozio);
-
-
 }

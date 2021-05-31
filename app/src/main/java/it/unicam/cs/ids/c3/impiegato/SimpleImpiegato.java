@@ -14,11 +14,10 @@ public class SimpleImpiegato implements Impiegato {
     private String cognome;
     private int idNegozio;
 
-    public SimpleImpiegato(int id, String nome, String cognome,int idNegozio) {
+    public SimpleImpiegato(int id, String nome, String cognome) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
-        this.idNegozio = idNegozio;
     }
 
     @Override
@@ -49,29 +48,6 @@ public class SimpleImpiegato implements Impiegato {
     @Override
     public void setCognome(String cognome) {
         this.cognome = cognome;
-    }
-
-    @Override
-    public int getIdNegozio() {
-        return this.idNegozio;
-    }
-
-    @Override
-    public void setIdNegozio(int idNegozio) {
-        this.idNegozio = idNegozio;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SimpleImpiegato that = (SimpleImpiegato) o;
-        return getIdNegozio() == that.getIdNegozio() && getNome().equals(that.getNome()) && getCognome().equals(that.getCognome());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getNome(), getCognome(), getIdNegozio());
     }
 
     @Override

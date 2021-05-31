@@ -1,5 +1,7 @@
 package it.unicam.cs.ids.c3.impiegato;
 
+import it.unicam.cs.ids.c3.database.MySqlDatabase;
+
 import java.util.ArrayList;
 
 /**
@@ -11,7 +13,9 @@ import java.util.ArrayList;
 public class GestoreImpiegati {
 
     private ArrayList<Impiegato> impiegati;
+    private MySqlDatabase db;
     private static GestoreImpiegati instance;
+    private Impiegato loggedInUser;
 
     /**
      * Metodo per ottenere l'istanza del GestoreImpiegati ( La classe é implementata come Singleton ).
@@ -25,8 +29,8 @@ public class GestoreImpiegati {
     }
 
     public GestoreImpiegati(){
-        //TODO : Implementare interazione con il db.
-        impiegati = new ArrayList<>();
+        db = MySqlDatabase.getInstance();
+        impiegati = db.getAllImpiegati();
     }
 
     /**
@@ -66,4 +70,19 @@ public class GestoreImpiegati {
         return this.impiegati;
     }
 
+    /**
+     * Setta l'impiegato che si é loggato nel sistema C3
+     * @param impiegato l'impiegato loggato
+     */
+    public void setLoggedInUser(Impiegato impiegato) {
+        this.loggedInUser = impiegato;
+    }
+
+    /**
+     * Ritorna l'utente loggato nel sistema
+     * @return l'utente loggato
+     */
+    public Impiegato getLoggedInUser(){
+        return this.loggedInUser;
+    }
 }

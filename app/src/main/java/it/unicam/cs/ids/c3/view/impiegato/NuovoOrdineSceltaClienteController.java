@@ -2,6 +2,8 @@ package it.unicam.cs.ids.c3.view.impiegato;
 
 import it.unicam.cs.ids.c3.cliente.Cliente;
 import it.unicam.cs.ids.c3.cliente.GestoreClienti;
+import it.unicam.cs.ids.c3.impiegato.GestoreImpiegati;
+import it.unicam.cs.ids.c3.negozio.GestoreNegozi;
 import it.unicam.cs.ids.c3.ordine.GestoreOrdini;
 import it.unicam.cs.ids.c3.ordine.Ordine;
 import it.unicam.cs.ids.c3.ordine.SimpleOrdine;
@@ -23,6 +25,9 @@ public class NuovoOrdineSceltaClienteController implements Initializable {
 
     private static GestoreClienti gestoreClienti = GestoreClienti.getInstance();
     private static GestoreOrdini gestoreOrdini = GestoreOrdini.getInstance();
+    private static GestoreImpiegati gestoreImpiegati = GestoreImpiegati.getInstance();
+    private static GestoreNegozi gestoreNegozi = GestoreNegozi.getInstance();
+    private static int idNegozio;
 
     @FXML
     private ComboBox<Cliente> clienteComboBox;
@@ -57,7 +62,8 @@ public class NuovoOrdineSceltaClienteController implements Initializable {
             alert.show();
         }else {
             //TODO : Gestire idNegozio con il negozio in cui lavora l'impiegato loggato.
-            gestoreOrdini.setTemp(new SimpleOrdine(gestoreOrdini.getNextId(),clienteComboBox.getValue().getId(), -1, null, -1,1,null));
+            gestoreOrdini.setTemp(new SimpleOrdine(gestoreOrdini.getNextId(),clienteComboBox.getValue().getId(),
+                    -1, null, -1,idNegozio,null));
             //Gestisce l'apertura della finestra successiva
             Stage primaryStage = (Stage) confermaButton.getScene().getWindow();
             Parent root = null;
@@ -79,6 +85,7 @@ public class NuovoOrdineSceltaClienteController implements Initializable {
         for(Cliente c : gestoreClienti.getClienti()){
             clienteComboBox.getItems().add(c);
         }
+        idNegozio = gestoreNegozi.getNegozioId(gestoreImpiegati.getLoggedInUser());
     }
 
 }

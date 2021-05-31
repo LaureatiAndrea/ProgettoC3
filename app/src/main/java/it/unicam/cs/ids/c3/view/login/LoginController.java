@@ -34,15 +34,17 @@ public class LoginController implements Initializable {
     void loginButtonPressed(ActionEvent event) {
         Stage primaryStage;
         Parent root;
+        //Se non vengono inseriti tutti i dati per il login
         if((usernameTextField.getText().isEmpty())||
                 (passwordPasswordField.getText().isEmpty())||
                 (ruoloComboBox.getSelectionModel().getSelectedItem()==null)){
             Alert alert = new Alert(Alert.AlertType.ERROR,"Inserisci Username e Password e seleziona un ruolo.");
             alert.showAndWait();
         }else{
+            //Se i dati sono inseriti correttamente
             if(gestoreLogin.login(ruoloComboBox.getSelectionModel().getSelectedItem(),usernameTextField.getText(),passwordPasswordField.getText())){
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Login eseguito con successo");
-                //TODO : Apre la prossima finestra.
+                //Apre l'interfaccia corrispondente se il login va a buon fine
                 switch(ruoloComboBox.getSelectionModel().getSelectedItem()){
                     case "CLIENTE":
                         primaryStage = (Stage)loginButton.getScene().getWindow();
@@ -68,9 +70,22 @@ public class LoginController implements Initializable {
                         primaryStage.getScene().setRoot(root);
                         primaryStage.sizeToScene();
                         break;
+                    case "IMPIEGATO" :
+                        primaryStage = (Stage)loginButton.getScene().getWindow();
+                        root = null;
+                        try{
+                            root = FXMLLoader.load(getClass().getResource("/impiegato/InterfacciaImpiegato.fxml"));
+                        }catch (IOException e){
+                            e.printStackTrace();
+                            System.out.println("Impossibile aprire l'interfaccia del corriere");
+                        }
+                        primaryStage.getScene().setRoot(root);
+                        primaryStage.sizeToScene();
+                        break;
                 }
 
             }else{
+                //Se non viene trovata corrispondenza
                 Alert alert = new Alert(Alert.AlertType.ERROR, "Nessun utente trovato.");
                 alert.showAndWait();
             }

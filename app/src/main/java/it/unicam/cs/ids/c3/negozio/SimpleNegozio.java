@@ -120,4 +120,11 @@ public class SimpleNegozio implements Negozio{
         return null;
     }
 
+    public void setIdImpiegato(int id){
+        this.idImpiegato = id;
+    }
+
+    public int getIdImpiegato(){
+        return this.idImpiegato;
+    }
 }

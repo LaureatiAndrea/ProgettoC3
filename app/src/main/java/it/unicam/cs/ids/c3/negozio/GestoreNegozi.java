@@ -1,6 +1,7 @@
 package it.unicam.cs.ids.c3.negozio;
 
 import it.unicam.cs.ids.c3.database.MySqlDatabase;
+import it.unicam.cs.ids.c3.impiegato.Impiegato;
 
 import java.util.ArrayList;
 
@@ -136,4 +137,12 @@ public class GestoreNegozi {
         return toReturn;
     }
 
+    public int getNegozioId(Impiegato impiegato) {
+        for(Negozio n : this.negozi){
+            if (n.getIdImpiegato()==impiegato.getId()){
+                return n.getId();
+            }
+        }
+        return 0;
+    }
 }

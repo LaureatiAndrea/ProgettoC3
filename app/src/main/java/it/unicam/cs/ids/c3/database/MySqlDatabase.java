@@ -7,6 +7,8 @@ import it.unicam.cs.ids.c3.corriere.Corriere;
 import it.unicam.cs.ids.c3.corriere.GestoreCorrieri;
 import it.unicam.cs.ids.c3.corriere.SimpleCorriere;
 import it.unicam.cs.ids.c3.corriere.Stato_Corriere;
+import it.unicam.cs.ids.c3.impiegato.Impiegato;
+import it.unicam.cs.ids.c3.impiegato.SimpleImpiegato;
 import it.unicam.cs.ids.c3.magazzino.Magazzino;
 import it.unicam.cs.ids.c3.magazzino.SimpleMagazzino;
 import it.unicam.cs.ids.c3.negozio.Categoria_Merceologica;
@@ -299,5 +301,19 @@ public class MySqlDatabase {
             e.printStackTrace();
         }
         return -1;
+    }
+
+    public ArrayList<Impiegato> getAllImpiegati() {
+        ArrayList<Impiegato> toReturn = new ArrayList<>();
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT * FROM impiegati");
+            ResultSet rs = query.executeQuery();
+            while (rs.next()) {
+                toReturn.add(new SimpleImpiegato(rs.getInt("id"),rs.getString("nome"),rs.getString("cognome")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return toReturn;
     }
 }

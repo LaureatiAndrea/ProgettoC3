@@ -92,4 +92,8 @@ public interface Negozio {
      * @return la promozione attiva
      */
     Promozione getPromozioneAttiva();
+
+    int getIdImpiegato();
+
+    void setIdImpiegato(int id);
 }
