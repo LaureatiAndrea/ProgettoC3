@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -71,14 +72,19 @@ public class ConsegnaOrdineController implements Initializable {
         /*Deve settare lo stato dell'ordine selezionato come CONSEGNATO AL CLIENTE nel caso di consegna a domicilio,
         *Deve settare lo stato dell'ordine selezionato come  DEPOSITATO IN MAGAZZINO nel caso di consegna presso magazzino
         */
-        int idOrdine = tableView.getSelectionModel().getSelectedItem().getID();
-        if(tableView.getSelectionModel().getSelectedItem().getIdMagazzino()==-1){
-            gestoreOrdini.setStatoOrdine(idOrdine,Stato_Ordine.CONSEGNATO_AL_CLIENTE);
-        }else {
-            gestoreOrdini.setStatoOrdine(idOrdine, Stato_Ordine.DEPOSITATO_IN_MAGAZZINO);
+        try {
+            int idOrdine = tableView.getSelectionModel().getSelectedItem().getID();
+            if (tableView.getSelectionModel().getSelectedItem().getIdMagazzino() == -1) {
+                gestoreOrdini.setStatoOrdine(idOrdine, Stato_Ordine.CONSEGNATO_AL_CLIENTE);
+            } else {
+                gestoreOrdini.setStatoOrdine(idOrdine, Stato_Ordine.DEPOSITATO_IN_MAGAZZINO);
+            }
+            gestoreOrdini.updateList();
+            tableView.getItems().remove(tableView.getSelectionModel().getSelectedItem());
+        }catch(NullPointerException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Seleziona un ordine!");
+            alert.showAndWait();
         }
-        gestoreOrdini.updateList();
-        tableView.getItems().remove(tableView.getSelectionModel().getSelectedItem());
     }
 
     @Override

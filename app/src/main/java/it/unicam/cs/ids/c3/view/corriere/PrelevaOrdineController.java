@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -69,10 +70,15 @@ public class PrelevaOrdineController implements Initializable {
     @FXML
     void confermaButtonPressed(ActionEvent event) {
         //Deve settare lo stato dell'ordine selezionato come TRASPORTO IN CORSO
-        int idOrdine = tableView.getSelectionModel().getSelectedItem().getID();
-        gestoreOrdini.setStatoOrdine(idOrdine, Stato_Ordine.TRASPORTO_IN_CORSO);
-        gestoreOrdini.updateList();
-        tableView.getItems().remove(tableView.getSelectionModel().getSelectedItem());
+        try {
+            int idOrdine = tableView.getSelectionModel().getSelectedItem().getID();
+            gestoreOrdini.setStatoOrdine(idOrdine, Stato_Ordine.TRASPORTO_IN_CORSO);
+            gestoreOrdini.updateList();
+            tableView.getItems().remove(tableView.getSelectionModel().getSelectedItem());
+        }catch(NullPointerException e){
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Seleziona un ordine!");
+            alert.showAndWait();
+        }
     }
 
     @Override
