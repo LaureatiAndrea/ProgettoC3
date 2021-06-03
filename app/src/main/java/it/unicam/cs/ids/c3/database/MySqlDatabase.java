@@ -1,5 +1,6 @@
 package it.unicam.cs.ids.c3.database;
 
+import com.google.protobuf.ApiOrBuilder;
 import it.unicam.cs.ids.c3.cliente.Cliente;
 import it.unicam.cs.ids.c3.cliente.GestoreClienti;
 import it.unicam.cs.ids.c3.cliente.SimpleCliente;
@@ -21,6 +22,7 @@ import it.unicam.cs.ids.c3.ordine.Stato_Ordine;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -212,7 +214,8 @@ public class MySqlDatabase {
                 ArrayList<Promozione> promozioniToAdd = new ArrayList<Promozione>();
                 while (rs2.next()) {
                     promozioniToAdd.add(new Promozione(rs2.getInt("id"),
-                            rs2.getDouble("percentualeSconto"), rs2.getInt("promozioneAttiva")));
+                            rs2.getDouble("percentualeSconto"), rs2.getInt("promozioneAttiva"),
+                            rs2.getString("note")));
                 }
                 toReturn.add(new SimpleNegozio(rs.getInt("id"), rs.getString("nome"),
                         rs.getString("indirizzo"),
@@ -296,6 +299,14 @@ public class MySqlDatabase {
                     if(rs.next()){
                         return rs.getInt("id");
                     }else return -1;
+                case "COMMERCIANTE":
+                    query = connection.prepareStatement("SELECT * FROM commercianti WHERE username = ? AND password = ?");
+                    query.setString(1, username);
+                    query.setString(2, password);
+                    rs = query.executeQuery();
+                    if(rs.next()){
+                        return rs.getInt("id");
+                    }else return -1;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -315,5 +326,92 @@ public class MySqlDatabase {
             throwables.printStackTrace();
         }
         return toReturn;
+    }
+
+    public int getNegozioFromCommerciante(int idCommerciante) {
+        int toReturn = 0;
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT id from negozi WHERE negozi.id = " +
+                    "(SELECT  idNegozio FROM commercianti WHERE commercianti.id=?);");
+            query.setInt(1,idCommerciante);
+            ResultSet rs = query.executeQuery();
+            while (rs.next()) {
+                toReturn = rs.getInt("id");
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return toReturn;
+    }
+
+    public boolean eliminaPromozione(int idPromozione) {
+        try {
+            PreparedStatement query = connection.prepareStatement("DELETE FROM promozioni WHERE id = ?;");
+            query.setInt(1,idPromozione);
+            int rs = query.executeUpdate();
+            while (rs>=1) {
+                return true;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+
+    public int getNextIdPromozione() {
+        try {
+            PreparedStatement query = connection.prepareStatement("SELECT max(id) from promozioni;");
+            ResultSet rs = query.executeQuery();
+            while (rs.next()) {
+                return rs.getInt("max(id)")+1;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return -1;
+    }
+
+    public void addPromozione(int idNegozio, double percSconto, String note) {
+        try {
+            int idPromozione = -1;
+            PreparedStatement query = connection.prepareStatement("SELECT max(id) from promozioni;");
+            ResultSet rs = query.executeQuery();
+            while(rs.next()){
+                idPromozione = rs.getInt("max(id)")+1;
+            }
+            query = connection.
+                    prepareStatement("INSERT INTO promozioni(id, percentualeSconto, promozioneAttiva, negozioId, note) " +
+                            "VALUES (?,?,?,?,?)");
+            query.setInt(1, idPromozione);
+            query.setDouble(2,percSconto);
+            query.setInt(3,1);
+            query.setInt(4,idNegozio);
+            query.setString(5,note);
+            int result = query.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void attivaPromozione(int id) {
+        try {
+            PreparedStatement query = connection.
+                    prepareStatement("UPDATE promozioni SET promozioneAttiva = 1 WHERE id = ?;");
+            query.setInt(1, id);
+            int result = query.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void disattivaPromozione(int id) {
+        try {
+            PreparedStatement query = connection.
+                    prepareStatement("UPDATE promozioni SET promozioneAttiva = 0 WHERE id = ?;");
+            query.setInt(1, id);
+            int result = query.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -12,19 +12,22 @@ public class Promozione {
     private int idPromozione;
     private double percentualeSconto;
     private boolean promozioneAttiva;
+    private String note;
 
-    public Promozione(int id, double percentualeSconto){
+    public Promozione(int id, double percentualeSconto, String note){
         this.idPromozione = id;
         this.percentualeSconto = percentualeSconto;
         this.promozioneAttiva = true;
+        this.note = note;
     }
 
-    public Promozione(int id, double percentualeSconto, int promozioneAttiva) {
+    public Promozione(int id, double percentualeSconto, int promozioneAttiva, String note) {
         this.idPromozione = id;
         this.percentualeSconto = percentualeSconto;
         if(promozioneAttiva==0){
             this.promozioneAttiva =  false;
         }else this.promozioneAttiva = true;
+        this.note = note;
     }
 
     public int getId(){
@@ -58,5 +61,9 @@ public class Promozione {
                 ", percentualeSconto=" + percentualeSconto +
                 ", statoPromozione=" + promozioneAttiva +
                 '}';
+    }
+
+    public String getNote() {
+        return this.note;
     }
 }

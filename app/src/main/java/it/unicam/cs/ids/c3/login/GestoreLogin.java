@@ -4,6 +4,7 @@ import it.unicam.cs.ids.c3.cliente.GestoreClienti;
 import it.unicam.cs.ids.c3.corriere.GestoreCorrieri;
 import it.unicam.cs.ids.c3.database.MySqlDatabase;
 import it.unicam.cs.ids.c3.impiegato.GestoreImpiegati;
+import it.unicam.cs.ids.c3.negozio.GestoreNegozi;
 
 /**
  * Questa classe ha la responsabilitá di gestire registrazione e login degli utenti del sistema C3.
@@ -16,6 +17,7 @@ public class GestoreLogin {
     private static GestoreClienti gestoreClienti = GestoreClienti.getInstance();
     private static GestoreCorrieri gestoreCorrieri = GestoreCorrieri.getInstance();
     private static GestoreImpiegati gestoreImpiegati = GestoreImpiegati.getInstance();
+    private static GestoreNegozi gestoreNegozi = GestoreNegozi.getInstance();
     private MySqlDatabase db;
 
     public static GestoreLogin getInstance() {
@@ -50,6 +52,10 @@ public class GestoreLogin {
                     return true;
                 case "IMPIEGATO":
                     gestoreImpiegati.setLoggedInUser(gestoreImpiegati.getImpiegato(result));
+                    System.out.println("id loggato = "+result);
+                    return true;
+                case "COMMERCIANTE":
+                    gestoreNegozi.setLoggedInUserId(result);
                     System.out.println("id loggato = "+result);
                     return true;
             }

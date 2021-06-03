@@ -15,6 +15,7 @@ public class GestoreNegozi {
 
     private static GestoreNegozi instance;
     private MySqlDatabase db;
+    private int loggedInUserId;
     private ArrayList<Negozio> negozi;
 
     /**
@@ -144,5 +145,51 @@ public class GestoreNegozi {
             }
         }
         return 0;
+    }
+
+    public void setLoggedInUserId(int result) {
+        this.loggedInUserId = result;
+    }
+
+    public int getLoggedInUserId() {
+        return this.loggedInUserId;
+    }
+
+    public Negozio getNegozioDelCommerciante(int idCommerciante) {
+        for(Negozio n : this.negozi){
+            if(n.getId()==db.getNegozioFromCommerciante(idCommerciante)){
+                return n;
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<Promozione> getPromozioniOfNegozio(int idNegozio) {
+        for(Negozio n : negozi){
+            if (n.getId() == idNegozio){
+                return n.getPromozioni();
+            }
+        }
+        return null;
+    }
+
+    public void eliminaPromozione(int idPromozione) {
+        db.eliminaPromozione(idPromozione);
+        negozi = db.getAllNegozi();
+    }
+
+    public void aggiungiPromozione(int idNegozio, double percSconto, String note) {
+        db.addPromozione(idNegozio,percSconto,note);
+        this.negozi = db.getAllNegozi();
+    }
+
+    public void attivaPromozione(int id) {
+        db.attivaPromozione(id);
+        this.negozi = db.getAllNegozi();
+    }
+
+    public void disattivaPromozione(int id) {
+        db.disattivaPromozione(id);
+        this.negozi = db.getAllNegozi();
     }
 }

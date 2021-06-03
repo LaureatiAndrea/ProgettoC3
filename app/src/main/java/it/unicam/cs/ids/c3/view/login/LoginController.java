@@ -82,6 +82,18 @@ public class LoginController implements Initializable {
                         primaryStage.getScene().setRoot(root);
                         primaryStage.sizeToScene();
                         break;
+                    case "COMMERCIANTE" :
+                        primaryStage = (Stage)loginButton.getScene().getWindow();
+                        root = null;
+                        try{
+                            root = FXMLLoader.load(getClass().getResource("/commerciante/InterfacciaCommerciante.fxml"));
+                        }catch (IOException e){
+                            e.printStackTrace();
+                            System.out.println("Impossibile aprire l'interfaccia del commerciante");
+                        }
+                        primaryStage.getScene().setRoot(root);
+                        primaryStage.sizeToScene();
+                        break;
                 }
 
             }else{
@@ -94,6 +106,6 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ruoloComboBox.getItems().addAll("CLIENTE","CORRIERE","IMPIEGATO");
+        ruoloComboBox.getItems().addAll("CLIENTE","CORRIERE","IMPIEGATO","COMMERCIANTE");
     }
 }

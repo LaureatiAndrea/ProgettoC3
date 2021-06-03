@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.function.Predicate;
 
 public class PrelevaOrdineController implements Initializable {
 
@@ -84,7 +83,6 @@ public class PrelevaOrdineController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //Setta la tabella per ospitare ordini
-        //TODO : Deve visualizzare solo gli ordini ancora da prelevare e del corriere loggato
         tableView.setItems(FXCollections.observableArrayList(gestoreOrdini.getOrdiniInNegozio(gestoreCorrieri.getLoggedInUser().getId())));
         //Colonna destinazione ( Indirizzo di consegna )
         destinazioneColumn.setCellValueFactory(cella -> {
