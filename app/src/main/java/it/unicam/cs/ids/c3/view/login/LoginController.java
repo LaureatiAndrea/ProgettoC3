@@ -1,7 +1,7 @@
 package it.unicam.cs.ids.c3.view.login;
 
 
-import it.unicam.cs.ids.c3.login.GestoreLogin;
+import it.unicam.cs.ids.c3.autenticazione.GestoreAutenticazione;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
-    private GestoreLogin gestoreLogin = GestoreLogin.getInstance();
+    private GestoreAutenticazione gestoreAutenticazione = GestoreAutenticazione.getInstance();
 
     @FXML
     private TextField usernameTextField;
@@ -42,7 +42,7 @@ public class LoginController implements Initializable {
             alert.showAndWait();
         }else{
             //Se i dati sono inseriti correttamente
-            if(gestoreLogin.login(ruoloComboBox.getSelectionModel().getSelectedItem(),usernameTextField.getText(),passwordPasswordField.getText())){
+            if(gestoreAutenticazione.login(ruoloComboBox.getSelectionModel().getSelectedItem(),usernameTextField.getText(),passwordPasswordField.getText())){
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Login eseguito con successo");
                 //Apre l'interfaccia corrispondente se il login va a buon fine
                 switch(ruoloComboBox.getSelectionModel().getSelectedItem()){

@@ -1,4 +1,4 @@
-package it.unicam.cs.ids.c3.login;
+package it.unicam.cs.ids.c3.autenticazione;
 
 import it.unicam.cs.ids.c3.cliente.GestoreClienti;
 import it.unicam.cs.ids.c3.corriere.GestoreCorrieri;
@@ -11,23 +11,23 @@ import it.unicam.cs.ids.c3.negozio.GestoreNegozi;
  *
  * @author Laureati Andrea Francesco, Gaetani Marco ( TEAM LAGM )
  */
-public class GestoreLogin {
+public class GestoreAutenticazione {
 
-    private static GestoreLogin instance;
+    private static GestoreAutenticazione instance;
     private static GestoreClienti gestoreClienti = GestoreClienti.getInstance();
     private static GestoreCorrieri gestoreCorrieri = GestoreCorrieri.getInstance();
     private static GestoreImpiegati gestoreImpiegati = GestoreImpiegati.getInstance();
     private static GestoreNegozi gestoreNegozi = GestoreNegozi.getInstance();
     private MySqlDatabase db;
 
-    public static GestoreLogin getInstance() {
+    public static GestoreAutenticazione getInstance() {
         if (instance == null) {
-            instance = new GestoreLogin();
+            instance = new GestoreAutenticazione();
         }
         return instance;
     }
 
-    private GestoreLogin() {
+    private GestoreAutenticazione() {
         db = MySqlDatabase.getInstance();
     }
 

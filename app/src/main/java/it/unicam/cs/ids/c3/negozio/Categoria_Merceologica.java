@@ -10,4 +10,6 @@ public enum Categoria_Merceologica {
     GIOCATTOLI,
     ELETTRONICA,
     ABBIGLIAMENTO,
+    CANCELLERIA,
+    LIBRI
 }

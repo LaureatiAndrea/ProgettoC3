@@ -8,24 +8,25 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="641.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.cliente.VisualizzaPromozioniController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicam.cs.ids.c3.view.cliente.VisualizzaPromozioniController">
    <children>
-      <Label layoutX="233.0" layoutY="24.0" text="VISUALIZZA PROMOZIONI">
+      <Label layoutX="326.0" layoutY="24.0" text="VISUALIZZA PROMOZIONI">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="tableView" layoutX="22.0" layoutY="81.0" prefHeight="279.0" prefWidth="597.0">
+      <TableView fx:id="tableView" layoutX="22.0" layoutY="81.0" prefHeight="279.0" prefWidth="784.0">
          <columns>
             <TableColumn fx:id="scontoColumn" prefWidth="65.0" text="\%Sconto" />
             <TableColumn fx:id="categoriaColumn" prefWidth="138.0" text="Categoria" />
             <TableColumn fx:id="negozioColumn" prefWidth="170.0" text="Negozio" />
             <TableColumn fx:id="indirizzoColumn" prefWidth="223.0" text="Indirizzo" />
+            <TableColumn fx:id="noteColumn" prefWidth="187.0" text="Note" />
          </columns>
       </TableView>
-      <Button fx:id="indietroButton" layoutX="14.0" layoutY="377.0" mnemonicParsing="false" onAction="#annullaButtonPressed" prefHeight="42.0" prefWidth="140.0" text="Indietro" />
-      <Label layoutX="408.0" layoutY="360.0" text="Filtra Promozioni:" />
-      <ChoiceBox fx:id="filtraCategoriaChoiceBox" layoutX="408.0" layoutY="386.0" prefWidth="150.0" />
-      <Button fx:id="filtraButton" layoutX="558.0" layoutY="386.0" mnemonicParsing="false" onAction="#filtraButtonPressed" text="OK" />
+      <Button fx:id="indietroButton" layoutX="28.0" layoutY="373.0" mnemonicParsing="false" onAction="#annullaButtonPressed" prefHeight="42.0" prefWidth="140.0" text="Indietro" />
+      <Label layoutX="577.0" layoutY="377.0" text="Categoria Merceologica" />
+      <ChoiceBox fx:id="filtraCategoriaChoiceBox" layoutX="577.0" layoutY="394.0" prefWidth="150.0" />
+      <Button fx:id="filtraButton" layoutX="744.0" layoutY="394.0" mnemonicParsing="false" onAction="#filtraButtonPressed" prefHeight="25.0" prefWidth="62.0" text="Filtra" />
    </children>
 </Pane>

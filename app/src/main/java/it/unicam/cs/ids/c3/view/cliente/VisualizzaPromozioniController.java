@@ -11,10 +11,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -47,6 +44,9 @@ public class VisualizzaPromozioniController implements Initializable {
     private ChoiceBox<String> filtraCategoriaChoiceBox;
 
     @FXML
+    private TableColumn<Negozio, String> noteColumn;
+
+    @FXML
     void annullaButtonPressed(ActionEvent event) {
         //Deve annullare il processo di prelevamento dell'ordine
         Stage primaryStage = (Stage) indietroButton.getScene().getWindow();
@@ -66,10 +66,15 @@ public class VisualizzaPromozioniController implements Initializable {
         //Filtra i negozi nella tabella in accordo con la categoria selezionata nella choicebox
         tableView.setItems(FXCollections.observableArrayList(
                 gestoreNegozi.getNegoziConPromozioniByCategoria(filtraCategoriaChoiceBox.getSelectionModel().getSelectedItem())));
+        if(tableView.getItems().stream().count()==0){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Non ci sono promozioni attive per la categoria selezionata");
+            alert.show();
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //TODO : Mostrare ogni promozione di ogni negozio, non solo una.
         //carica la tabella con tutti i negozi.
         tableView.setItems(FXCollections.observableArrayList(gestoreNegozi.getNegoziConPromozioni()));
         // Colonna promozioni (%Sconto)
@@ -87,6 +92,10 @@ public class VisualizzaPromozioniController implements Initializable {
         //colonna categoria (categoria negozio)
         categoriaColumn.setCellValueFactory(cella -> {
             return new SimpleStringProperty(cella.getValue().getCategoria().name());
+        });
+        //colonna note ( note promozione )
+        noteColumn.setCellValueFactory(cella -> {
+            return new SimpleStringProperty(cella.getValue().getPromozioneAttiva().getNote());
         });
         //Inizializzare la choiceBox
         filtraCategoriaChoiceBox.getItems().setAll(gestoreNegozi.getCategorieAsStrings());

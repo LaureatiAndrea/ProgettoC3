@@ -67,7 +67,7 @@ public class NuovoOrdineConfermaController implements Initializable {
         int codiceRitiro = gestoreOrdini.getTemp().getCodiceRitiro();
         String verifica = gestoreOrdini.getTemp().toString();
         gestoreOrdini.clearTemp();
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Codice per il ritiro : " + codiceRitiro);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Codice per il ritiro : " + codiceRitiro + "\nStampo biglietto.");
         alert.show();
         annullaButtonClicked(null);
     }
@@ -85,11 +85,11 @@ public class NuovoOrdineConfermaController implements Initializable {
         showCorriereLabel.setText(toShow);
         if((gestoreOrdini.getTemp().getIdMagazzino() == -1)){
             toShow = gestoreOrdini.getTemp().getDestinazione();
-            showDestinazioneLabel.setText("Residenza : "+toShow);
+            showDestinazioneLabel.setText(toShow);
         }else {
             int idMagazzino = gestoreOrdini.getTemp().getIdMagazzino();
             Magazzino magazzino = gestoreMagazzini.getMagazzino(idMagazzino);
-            toShow = "Magazzino : " + magazzino.getNome() + " " + magazzino.getIndirizzo();
+            toShow =magazzino.getNome() + " " + magazzino.getIndirizzo();
             showDestinazioneLabel.setText(toShow);
         }
     }

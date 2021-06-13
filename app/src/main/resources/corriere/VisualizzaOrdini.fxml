@@ -18,10 +18,10 @@
       <TableView fx:id="tableView" layoutX="14.0" layoutY="86.0" prefHeight="279.0" prefWidth="726.0">
          <columns>
             <TableColumn fx:id="negozioColumn" prefWidth="119.0" text="Negozio" />
-            <TableColumn fx:id="ritiraPressoColumn" prefWidth="182.0" text="Ritira Presso" />
-            <TableColumn fx:id="destinazioneColumn" prefWidth="173.0" text="Destinazione" />
-            <TableColumn fx:id="noteColumn" prefWidth="154.0" text="Note" />
-            <TableColumn fx:id="codiceColumn" prefWidth="97.0" text="Codice" />
+            <TableColumn fx:id="ritiraPressoColumn" prefWidth="145.0" text="Ritira Presso" />
+            <TableColumn fx:id="destinazioneColumn" prefWidth="208.0" text="Destinazione" />
+            <TableColumn fx:id="noteColumn" prefWidth="165.0" text="Note" />
+            <TableColumn fx:id="codiceColumn" prefWidth="88.0" text="Codice" />
          </columns>
       </TableView>
       <Button fx:id="indietroButton" layoutX="14.0" layoutY="377.0" mnemonicParsing="false" onAction="#annullaButtonPressed" prefHeight="42.0" prefWidth="140.0" text="Indietro" />

@@ -36,8 +36,12 @@ public class GestoreOrdini {
     }
 
     public int getNextId() {
-        //TODO : ritorna null perche non ho implementato getAllOrdini dal database.
-        return (ordini.get(ordini.size()-1).getID())+1;
+        try {
+            int nextid = (ordini.get(ordini.size() - 1).getID()) + 1;
+            return nextid;
+        }catch (IndexOutOfBoundsException e){
+            return 1;
+        }
     }
 
     public ArrayList<Ordine> getOrdini(){

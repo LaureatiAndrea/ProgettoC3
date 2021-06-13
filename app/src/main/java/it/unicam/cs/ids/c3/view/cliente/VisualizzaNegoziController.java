@@ -10,10 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -62,6 +59,10 @@ public class VisualizzaNegoziController implements Initializable {
     void filtraButtonPressed(ActionEvent event) {
         //Filtra i negozi nella tabella in accordo con la categoria selezionata nella choicebox
         tableView.setItems(FXCollections.observableArrayList(gestoreNegozi.getNegoziByCategoria(filtraCategoriaChoiceBox.getSelectionModel().getSelectedItem())));
+        if(tableView.getItems().stream().count()==0){
+            Alert alert = new Alert(Alert.AlertType.ERROR,"Non ci sono negozi della categoria selezionata");
+            alert.showAndWait();
+        }
     }
 
     @Override
