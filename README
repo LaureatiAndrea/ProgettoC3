@@ -7,3 +7,9 @@ degli acquisti in centro più facile e interessante.
 
 Questo codice è stato realizzato per sostenere l'esame di Ingegneria del Software 2021
 presso l'Università di Camerino (Corso di laurea triennale in Informatica).
+
+Nella cartella VisualParadigm è presente il file .vpp
+
+Il file C3Database.sql va importato in MySqlWorbench in uno schema chiamato "c3" per ricostruire il database usato dal programma.
+
+Per eseguire il programma, è sufficiente eseguire il comando gradle run.
